@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4B7956437A65BEE2CBA46F43 /* Pods_RickandMorty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C9C5A74A8609D5F93C832E7 /* Pods_RickandMorty.framework */; };
+		ACEC691A26E5471300A0F25E /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC691926E5471300A0F25E /* DataViewController.swift */; };
+		ACEC691C26E54BB700A0F25E /* CustomPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC691B26E54BB700A0F25E /* CustomPageViewController.swift */; };
 		ACFCCF9B26E0F53A00D9A7DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFCCF9A26E0F53A00D9A7DF /* AppDelegate.swift */; };
 		ACFCCF9D26E0F53A00D9A7DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFCCF9C26E0F53A00D9A7DF /* SceneDelegate.swift */; };
 		ACFCCF9F26E0F53A00D9A7DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFCCF9E26E0F53A00D9A7DF /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 		2EDD57A02449A660CBA4A46C /* Pods-RickandMorty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickandMorty.release.xcconfig"; path = "Target Support Files/Pods-RickandMorty/Pods-RickandMorty.release.xcconfig"; sourceTree = "<group>"; };
 		41B88B604DE07085F3ABD64B /* Pods-RickandMorty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickandMorty.debug.xcconfig"; path = "Target Support Files/Pods-RickandMorty/Pods-RickandMorty.debug.xcconfig"; sourceTree = "<group>"; };
 		7C9C5A74A8609D5F93C832E7 /* Pods_RickandMorty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickandMorty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACEC691926E5471300A0F25E /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		ACEC691B26E54BB700A0F25E /* CustomPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageViewController.swift; sourceTree = "<group>"; };
 		ACFCCF9726E0F53A00D9A7DF /* RickandMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickandMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACFCCF9A26E0F53A00D9A7DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACFCCF9C26E0F53A00D9A7DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 				ACFCCF9A26E0F53A00D9A7DF /* AppDelegate.swift */,
 				ACFCCF9C26E0F53A00D9A7DF /* SceneDelegate.swift */,
 				ACFCCF9E26E0F53A00D9A7DF /* ViewController.swift */,
+				ACEC691926E5471300A0F25E /* DataViewController.swift */,
+				ACEC691B26E54BB700A0F25E /* CustomPageViewController.swift */,
 				ACFCCFA026E0F53A00D9A7DF /* Main.storyboard */,
 				ACFCCFA326E0F53E00D9A7DF /* Assets.xcassets */,
 				ACFCCFA526E0F53E00D9A7DF /* LaunchScreen.storyboard */,
@@ -205,8 +211,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACEC691A26E5471300A0F25E /* DataViewController.swift in Sources */,
 				ACFCCF9F26E0F53A00D9A7DF /* ViewController.swift in Sources */,
 				ACFCCF9B26E0F53A00D9A7DF /* AppDelegate.swift in Sources */,
+				ACEC691C26E54BB700A0F25E /* CustomPageViewController.swift in Sources */,
 				ACFCCF9D26E0F53A00D9A7DF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
