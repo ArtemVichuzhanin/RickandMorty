@@ -12,7 +12,7 @@
 		ACEC691C26E54BB700A0F25E /* CustomPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC691B26E54BB700A0F25E /* CustomPageViewController.swift */; };
 		ACFCCF9B26E0F53A00D9A7DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFCCF9A26E0F53A00D9A7DF /* AppDelegate.swift */; };
 		ACFCCF9D26E0F53A00D9A7DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFCCF9C26E0F53A00D9A7DF /* SceneDelegate.swift */; };
-		ACFCCF9F26E0F53A00D9A7DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFCCF9E26E0F53A00D9A7DF /* ViewController.swift */; };
+		ACFCCF9F26E0F53A00D9A7DF /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFCCF9E26E0F53A00D9A7DF /* WelcomeViewController.swift */; };
 		ACFCCFA226E0F53A00D9A7DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACFCCFA026E0F53A00D9A7DF /* Main.storyboard */; };
 		ACFCCFA426E0F53E00D9A7DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFCCFA326E0F53E00D9A7DF /* Assets.xcassets */; };
 		ACFCCFA726E0F53E00D9A7DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACFCCFA526E0F53E00D9A7DF /* LaunchScreen.storyboard */; };
@@ -27,7 +27,7 @@
 		ACFCCF9726E0F53A00D9A7DF /* RickandMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickandMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACFCCF9A26E0F53A00D9A7DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACFCCF9C26E0F53A00D9A7DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ACFCCF9E26E0F53A00D9A7DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ACFCCF9E26E0F53A00D9A7DF /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		ACFCCFA126E0F53A00D9A7DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACFCCFA326E0F53E00D9A7DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACFCCFA626E0F53E00D9A7DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +63,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		ACA4CA292710245B00F350EB /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				ACFCCFA026E0F53A00D9A7DF /* Main.storyboard */,
+				ACFCCFA526E0F53E00D9A7DF /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		ACA4CA2A2710253800F350EB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ACFCCF9E26E0F53A00D9A7DF /* WelcomeViewController.swift */,
+				ACEC691926E5471300A0F25E /* DataViewController.swift */,
+				ACEC691B26E54BB700A0F25E /* CustomPageViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		ACFCCF8E26E0F53A00D9A7DF = {
 			isa = PBXGroup;
 			children = (
@@ -86,12 +105,9 @@
 			children = (
 				ACFCCF9A26E0F53A00D9A7DF /* AppDelegate.swift */,
 				ACFCCF9C26E0F53A00D9A7DF /* SceneDelegate.swift */,
-				ACFCCF9E26E0F53A00D9A7DF /* ViewController.swift */,
-				ACEC691926E5471300A0F25E /* DataViewController.swift */,
-				ACEC691B26E54BB700A0F25E /* CustomPageViewController.swift */,
-				ACFCCFA026E0F53A00D9A7DF /* Main.storyboard */,
+				ACA4CA2A2710253800F350EB /* Controllers */,
+				ACA4CA292710245B00F350EB /* Storyboards */,
 				ACFCCFA326E0F53E00D9A7DF /* Assets.xcassets */,
-				ACFCCFA526E0F53E00D9A7DF /* LaunchScreen.storyboard */,
 				ACFCCFA826E0F53E00D9A7DF /* Info.plist */,
 			);
 			path = RickandMorty;
@@ -212,7 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACEC691A26E5471300A0F25E /* DataViewController.swift in Sources */,
-				ACFCCF9F26E0F53A00D9A7DF /* ViewController.swift in Sources */,
+				ACFCCF9F26E0F53A00D9A7DF /* WelcomeViewController.swift in Sources */,
 				ACFCCF9B26E0F53A00D9A7DF /* AppDelegate.swift in Sources */,
 				ACEC691C26E54BB700A0F25E /* CustomPageViewController.swift in Sources */,
 				ACFCCF9D26E0F53A00D9A7DF /* SceneDelegate.swift in Sources */,

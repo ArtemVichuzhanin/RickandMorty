@@ -7,15 +7,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WelcomeViewController: UIViewController {
   @IBOutlet weak var contentView: UIView!
+  @IBOutlet weak var pageControl: UIPageControl!
   var currentViewControllerIndex = 0
   let images = ["pic_one", "pic_two", "pic_three"]
 
   override func viewDidLoad() {
     super.viewDidLoad()
     configurePageViewController()
-    setupPageControl()
+    configurePageControl()
   }
 
   func configurePageViewController() {
@@ -46,10 +47,21 @@ class ViewController: UIViewController {
     pageViewController.setViewControllers([startingViewController], direction: .forward, animated: true)
   }
 
-  func setupPageControl() {
-    let appearence = UIPageControl.appearance()
-    appearence.pageIndicatorTintColor = .lightGray
-    appearence.currentPageIndicatorTintColor = .darkGray
+  func configurePageControl() {
+    self.pageControl.pageIndicatorTintColor = .init(red: 0, green: 142, blue: 214, alpha: 1)
+    self.pageControl.currentPageIndicatorTintColor = .init(red: 0, green: 142, blue: 214, alpha: 1)
+    self.pageControl.numberOfPages = images.count
+    self.pageControl.currentPage = currentViewControllerIndex
+    updatePageControl(currentViewControllerIndex)
+  }
+
+  func updatePageControl(_ currentPage: Int) {
+    (0..<self.pageControl.numberOfPages).forEach { (index) in
+      let activePageIconImage = UIImage(named: "current_page_dot")
+      let otherPageIconImage = UIImage(named: "other_page_dot")
+      let pageIcon = index == currentPage ? activePageIconImage : otherPageIconImage
+      self.pageControl.setIndicatorImage(pageIcon, forPage: index)
+    }
   }
 
   func detailViewControllerAt(index: Int) -> DataViewController? {
@@ -58,33 +70,35 @@ class ViewController: UIViewController {
     }
     guard let dataViewController = storyboard?.instantiateViewController(
     withIdentifier: String(describing: DataViewController.self)) as? DataViewController else { return nil }
-    dataViewController.itemIndex = index
     dataViewController.imageName = images[index]
+    dataViewController.view.tag = index
     return dataViewController
   }
 }
 
-extension ViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
-  func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-    return self.currentViewControllerIndex
-  }
-  func presentationCount(for pageViewController: UIPageViewController) -> Int {
-    return images.count
-  }
+// MARK: - Extension UIPageViewController Delegate and DataSource
+
+extension WelcomeViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
   func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-    let dataViewController = viewController as? DataViewController
-    guard var currentIndex = dataViewController?.itemIndex else { return nil }
+    guard var currentIndex = pageViewController.viewControllers?.first?.view.tag else { return nil }
     currentViewControllerIndex = currentIndex
     if currentIndex == 0 { return nil }
     currentIndex -= 1
     return detailViewControllerAt(index: currentIndex)
   }
+
   func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-    let dataViewController = viewController as? DataViewController
-    guard var currentIndex = dataViewController?.itemIndex else { return nil }
+    guard var currentIndex = pageViewController.viewControllers?.first?.view.tag else { return nil }
     if currentIndex == images.count { return nil }
     currentIndex += 1
     currentViewControllerIndex = currentIndex
     return detailViewControllerAt(index: currentIndex)
+  }
+
+  func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+    guard completed else { return }
+    guard let index = pageViewController.viewControllers?.first?.view.tag else { return }
+    self.pageControl.currentPage = index
+    updatePageControl(index)
   }
 }
