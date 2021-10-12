@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4B7956437A65BEE2CBA46F43 /* Pods_RickandMorty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C9C5A74A8609D5F93C832E7 /* Pods_RickandMorty.framework */; };
+		AC061E942714B55A001819DF /* About.json in Resources */ = {isa = PBXBuildFile; fileRef = AC061E932714B55A001819DF /* About.json */; };
+		AC061E9A2715D380001819DF /* PageForWelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC061E992715D380001819DF /* PageForWelcomeScreen.swift */; };
+		AC061E9C2715D3BD001819DF /* PageForWelcomeScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC061E9B2715D3BD001819DF /* PageForWelcomeScreenModel.swift */; };
+		AC061EA02715F3DD001819DF /* UITextView+HyperLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC061E9F2715F3DD001819DF /* UITextView+HyperLinks.swift */; };
 		ACEC691A26E5471300A0F25E /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC691926E5471300A0F25E /* DataViewController.swift */; };
 		ACEC691C26E54BB700A0F25E /* CustomPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC691B26E54BB700A0F25E /* CustomPageViewController.swift */; };
 		ACFCCF9B26E0F53A00D9A7DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFCCF9A26E0F53A00D9A7DF /* AppDelegate.swift */; };
@@ -22,6 +26,10 @@
 		2EDD57A02449A660CBA4A46C /* Pods-RickandMorty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickandMorty.release.xcconfig"; path = "Target Support Files/Pods-RickandMorty/Pods-RickandMorty.release.xcconfig"; sourceTree = "<group>"; };
 		41B88B604DE07085F3ABD64B /* Pods-RickandMorty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickandMorty.debug.xcconfig"; path = "Target Support Files/Pods-RickandMorty/Pods-RickandMorty.debug.xcconfig"; sourceTree = "<group>"; };
 		7C9C5A74A8609D5F93C832E7 /* Pods_RickandMorty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickandMorty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC061E932714B55A001819DF /* About.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = About.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		AC061E992715D380001819DF /* PageForWelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageForWelcomeScreen.swift; sourceTree = "<group>"; };
+		AC061E9B2715D3BD001819DF /* PageForWelcomeScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageForWelcomeScreenModel.swift; sourceTree = "<group>"; };
+		AC061E9F2715F3DD001819DF /* UITextView+HyperLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+HyperLinks.swift"; sourceTree = "<group>"; };
 		ACEC691926E5471300A0F25E /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		ACEC691B26E54BB700A0F25E /* CustomPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageViewController.swift; sourceTree = "<group>"; };
 		ACFCCF9726E0F53A00D9A7DF /* RickandMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickandMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +71,48 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AC061E952714B738001819DF /* Welcome screen text json file */ = {
+			isa = PBXGroup;
+			children = (
+				AC061E932714B55A001819DF /* About.json */,
+			);
+			path = "Welcome screen text json file";
+			sourceTree = "<group>";
+		};
+		AC061E962715D20F001819DF /* WelcomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				ACFCCF9E26E0F53A00D9A7DF /* WelcomeViewController.swift */,
+				ACEC691926E5471300A0F25E /* DataViewController.swift */,
+				ACEC691B26E54BB700A0F25E /* CustomPageViewController.swift */,
+			);
+			path = WelcomeScreen;
+			sourceTree = "<group>";
+		};
+		AC061E982715D24A001819DF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AC061E9B2715D3BD001819DF /* PageForWelcomeScreenModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AC061E9D2715D859001819DF /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				AC061E992715D380001819DF /* PageForWelcomeScreen.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		AC061E9E2715F290001819DF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AC061E9F2715F3DD001819DF /* UITextView+HyperLinks.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		ACA4CA292710245B00F350EB /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -75,9 +125,7 @@
 		ACA4CA2A2710253800F350EB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				ACFCCF9E26E0F53A00D9A7DF /* WelcomeViewController.swift */,
-				ACEC691926E5471300A0F25E /* DataViewController.swift */,
-				ACEC691B26E54BB700A0F25E /* CustomPageViewController.swift */,
+				AC061E962715D20F001819DF /* WelcomeScreen */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -105,9 +153,13 @@
 			children = (
 				ACFCCF9A26E0F53A00D9A7DF /* AppDelegate.swift */,
 				ACFCCF9C26E0F53A00D9A7DF /* SceneDelegate.swift */,
+				AC061E9D2715D859001819DF /* Entity */,
+				AC061E982715D24A001819DF /* Models */,
 				ACA4CA2A2710253800F350EB /* Controllers */,
 				ACA4CA292710245B00F350EB /* Storyboards */,
 				ACFCCFA326E0F53E00D9A7DF /* Assets.xcassets */,
+				AC061E9E2715F290001819DF /* Extension */,
+				AC061E952714B738001819DF /* Welcome screen text json file */,
 				ACFCCFA826E0F53E00D9A7DF /* Info.plist */,
 			);
 			path = RickandMorty;
@@ -173,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACFCCFA726E0F53E00D9A7DF /* LaunchScreen.storyboard in Resources */,
+				AC061E942714B55A001819DF /* About.json in Resources */,
 				ACFCCFA426E0F53E00D9A7DF /* Assets.xcassets in Resources */,
 				ACFCCFA226E0F53A00D9A7DF /* Main.storyboard in Resources */,
 			);
@@ -227,7 +280,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC061EA02715F3DD001819DF /* UITextView+HyperLinks.swift in Sources */,
 				ACEC691A26E5471300A0F25E /* DataViewController.swift in Sources */,
+				AC061E9A2715D380001819DF /* PageForWelcomeScreen.swift in Sources */,
+				AC061E9C2715D3BD001819DF /* PageForWelcomeScreenModel.swift in Sources */,
 				ACFCCF9F26E0F53A00D9A7DF /* WelcomeViewController.swift in Sources */,
 				ACFCCF9B26E0F53A00D9A7DF /* AppDelegate.swift in Sources */,
 				ACEC691C26E54BB700A0F25E /* CustomPageViewController.swift in Sources */,

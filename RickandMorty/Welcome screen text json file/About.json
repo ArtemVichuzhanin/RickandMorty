@@ -1,0 +1,47 @@
+[
+  {
+    "topic": "About the app",
+    "description": "This app uses The Rick and Morty API.",
+    "links": {
+      "The Rick and Morty API": "https://rickandmortyapi.com/"
+    }
+  },
+  {
+    "topic": "What is this?",
+    "description": "The Rick and Morty API is a REST(ish) and GraphQL API based on the television show Rick and Morty. You will have access to about hundreds of characters, images, locations and episodes. The Rick and Morty API is filled with canonical information as seen on the TV show.",
+    "links": {
+      "Rick and Morty": "https://www.adultswim.com/videos/rick-and-morty"
+    }
+  },
+  {
+    "topic": "Who are you?",
+    "description": "The developers of The Rick and Morty API are Axel Fuhrmann, a guy who likes to develop things and Talita, the \"Rick and Morty data scientist\" and hardcore fan.",
+    "links": {
+      "Axel Fuhrmann": "https://axelfuhrmann.com/",
+      "Talita": "https://talitatraveler.com/"
+    }
+  },
+  {
+    "topic": "Why did you build this?",
+    "description": "Because we were really interested in the idea of writing an open source project and also because Rick and Morty is our favorite show at that moment, so why not?",
+  },
+  {
+    "topic": "Technical stuff?",
+    "description": "The Rick and Morty API uses Node and MongoDB to serve the API. All the data is formatted in json and the API is hosted on Digital Ocean and Netlify.",
+    "links": {
+      "Node": "https://nodejs.org/en/",
+      "MongoDB": "https://www.mongodb.com/",
+      "json": "https://www.json.org/json-en.html",
+      "Digital Ocean": "https://www.digitalocean.com/?refcode=2736d3ffe622&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=CopyPaste",
+      "Netlify": "https://www.netlify.com/"
+    }
+  },
+  {
+    "topic": "Copyright?",
+    "description": "Rick and Morty is created by Justin Roiland and Dan Harmon for Adult Swim. The data and images are used without claim of ownership and belong to their respective owners. The Rick and Morty API is open source and uses a BSD license.",
+    "links": {
+      "Adult Swim": "https://www.adultswim.com/"
+    }
+  }
+]
+
