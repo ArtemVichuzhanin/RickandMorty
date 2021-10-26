@@ -9,15 +9,30 @@
 /* Begin PBXBuildFile section */
 		4B7956437A65BEE2CBA46F43 /* Pods_RickandMorty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C9C5A74A8609D5F93C832E7 /* Pods_RickandMorty.framework */; };
 		AC061E942714B55A001819DF /* About.json in Resources */ = {isa = PBXBuildFile; fileRef = AC061E932714B55A001819DF /* About.json */; };
-		AC061E9A2715D380001819DF /* PageForWelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC061E992715D380001819DF /* PageForWelcomeScreen.swift */; };
-		AC061E9C2715D3BD001819DF /* PageForWelcomeScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC061E9B2715D3BD001819DF /* PageForWelcomeScreenModel.swift */; };
-		AC061EA02715F3DD001819DF /* UITextView+HyperLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC061E9F2715F3DD001819DF /* UITextView+HyperLinks.swift */; };
+		AC061E9A2715D380001819DF /* WelcomeScreenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC061E992715D380001819DF /* WelcomeScreenPage.swift */; };
+		AC061E9C2715D3BD001819DF /* WelcomeScreenPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC061E9B2715D3BD001819DF /* WelcomeScreenPageModel.swift */; };
+		AC061EA02715F3DD001819DF /* UITextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC061E9F2715F3DD001819DF /* UITextViewExtension.swift */; };
+		AC061EA22718A135001819DF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC061EA12718A135001819DF /* AppCoordinator.swift */; };
+		AC061EA6271B4873001819DF /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC061EA5271B4873001819DF /* UserDefaultsKeys.swift */; };
+		AC061EA8271B48D4001819DF /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC061EA7271B48D4001819DF /* RootViewController.swift */; };
+		AC061EAD271F08DC001819DF /* StoryboardCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC061EAC271F08DC001819DF /* StoryboardCreatable.swift */; };
+		AC061EB1271F0C31001819DF /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC061EB0271F0C31001819DF /* AuthViewController.swift */; };
+		AC061EB3271F0CB0001819DF /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC061EB2271F0CB0001819DF /* AuthViewController.storyboard */; };
+		AC061EB5271F0CCF001819DF /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC061EB4271F0CCF001819DF /* HomeViewController.storyboard */; };
+		AC061EB7271F0CE6001819DF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC061EB6271F0CE6001819DF /* HomeViewController.swift */; };
+		AC061EBA27207A3C001819DF /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC061EB927207A3B001819DF /* UserModel.swift */; };
+		AC061EBC27207AEE001819DF /* KeychainWrapperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC061EBB27207AEE001819DF /* KeychainWrapperProtocol.swift */; };
+		AC061EBE27207B4E001819DF /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC061EBD27207B4E001819DF /* KeychainWrapper.swift */; };
+		AC061EC02721282A001819DF /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC061EBF2721282A001819DF /* AuthServiceProtocol.swift */; };
+		AC061EC2272128A4001819DF /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC061EC1272128A4001819DF /* AuthService.swift */; };
+		AC061EC4272129A4001819DF /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = AC061EC3272129A4001819DF /* User.json */; };
+		AC2A40152721C33B001268AD /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A40142721C33B001268AD /* UITextFieldExtension.swift */; };
 		ACEC691A26E5471300A0F25E /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC691926E5471300A0F25E /* DataViewController.swift */; };
 		ACEC691C26E54BB700A0F25E /* CustomPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC691B26E54BB700A0F25E /* CustomPageViewController.swift */; };
 		ACFCCF9B26E0F53A00D9A7DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFCCF9A26E0F53A00D9A7DF /* AppDelegate.swift */; };
 		ACFCCF9D26E0F53A00D9A7DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFCCF9C26E0F53A00D9A7DF /* SceneDelegate.swift */; };
 		ACFCCF9F26E0F53A00D9A7DF /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFCCF9E26E0F53A00D9A7DF /* WelcomeViewController.swift */; };
-		ACFCCFA226E0F53A00D9A7DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACFCCFA026E0F53A00D9A7DF /* Main.storyboard */; };
+		ACFCCFA226E0F53A00D9A7DF /* WelcomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACFCCFA026E0F53A00D9A7DF /* WelcomeViewController.storyboard */; };
 		ACFCCFA426E0F53E00D9A7DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFCCFA326E0F53E00D9A7DF /* Assets.xcassets */; };
 		ACFCCFA726E0F53E00D9A7DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACFCCFA526E0F53E00D9A7DF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -27,16 +42,31 @@
 		41B88B604DE07085F3ABD64B /* Pods-RickandMorty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickandMorty.debug.xcconfig"; path = "Target Support Files/Pods-RickandMorty/Pods-RickandMorty.debug.xcconfig"; sourceTree = "<group>"; };
 		7C9C5A74A8609D5F93C832E7 /* Pods_RickandMorty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickandMorty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC061E932714B55A001819DF /* About.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = About.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
-		AC061E992715D380001819DF /* PageForWelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageForWelcomeScreen.swift; sourceTree = "<group>"; };
-		AC061E9B2715D3BD001819DF /* PageForWelcomeScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageForWelcomeScreenModel.swift; sourceTree = "<group>"; };
-		AC061E9F2715F3DD001819DF /* UITextView+HyperLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+HyperLinks.swift"; sourceTree = "<group>"; };
+		AC061E992715D380001819DF /* WelcomeScreenPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenPage.swift; sourceTree = "<group>"; };
+		AC061E9B2715D3BD001819DF /* WelcomeScreenPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenPageModel.swift; sourceTree = "<group>"; };
+		AC061E9F2715F3DD001819DF /* UITextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExtension.swift; sourceTree = "<group>"; };
+		AC061EA12718A135001819DF /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		AC061EA5271B4873001819DF /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		AC061EA7271B48D4001819DF /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		AC061EAC271F08DC001819DF /* StoryboardCreatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardCreatable.swift; sourceTree = "<group>"; };
+		AC061EB0271F0C31001819DF /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		AC061EB2271F0CB0001819DF /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
+		AC061EB4271F0CCF001819DF /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
+		AC061EB6271F0CE6001819DF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AC061EB927207A3B001819DF /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		AC061EBB27207AEE001819DF /* KeychainWrapperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapperProtocol.swift; sourceTree = "<group>"; };
+		AC061EBD27207B4E001819DF /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		AC061EBF2721282A001819DF /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
+		AC061EC1272128A4001819DF /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		AC061EC3272129A4001819DF /* User.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		AC2A40142721C33B001268AD /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		ACEC691926E5471300A0F25E /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		ACEC691B26E54BB700A0F25E /* CustomPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageViewController.swift; sourceTree = "<group>"; };
 		ACFCCF9726E0F53A00D9A7DF /* RickandMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickandMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACFCCF9A26E0F53A00D9A7DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACFCCF9C26E0F53A00D9A7DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ACFCCF9E26E0F53A00D9A7DF /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		ACFCCFA126E0F53A00D9A7DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ACFCCFA126E0F53A00D9A7DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/WelcomeViewController.storyboard; sourceTree = "<group>"; };
 		ACFCCFA326E0F53E00D9A7DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACFCCFA626E0F53E00D9A7DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACFCCFA826E0F53E00D9A7DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,63 +101,135 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AC061E952714B738001819DF /* Welcome screen text json file */ = {
+		AC061E952714B738001819DF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				AC061E932714B55A001819DF /* About.json */,
+				AC061EC3272129A4001819DF /* User.json */,
+				ACFCCFA326E0F53E00D9A7DF /* Assets.xcassets */,
 			);
-			path = "Welcome screen text json file";
+			path = Resources;
 			sourceTree = "<group>";
 		};
-		AC061E962715D20F001819DF /* WelcomeScreen */ = {
+		AC061E962715D20F001819DF /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
 				ACFCCF9E26E0F53A00D9A7DF /* WelcomeViewController.swift */,
 				ACEC691926E5471300A0F25E /* DataViewController.swift */,
 				ACEC691B26E54BB700A0F25E /* CustomPageViewController.swift */,
+				ACFCCFA026E0F53A00D9A7DF /* WelcomeViewController.storyboard */,
 			);
-			path = WelcomeScreen;
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		AC061E982715D24A001819DF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AC061E9B2715D3BD001819DF /* PageForWelcomeScreenModel.swift */,
+				AC061E9B2715D3BD001819DF /* WelcomeScreenPageModel.swift */,
+				AC061EB927207A3B001819DF /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		AC061E9D2715D859001819DF /* Entity */ = {
+		AC061E9D2715D859001819DF /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				AC061E992715D380001819DF /* PageForWelcomeScreen.swift */,
+				AC061E992715D380001819DF /* WelcomeScreenPage.swift */,
 			);
-			path = Entity;
+			path = Entities;
 			sourceTree = "<group>";
 		};
-		AC061E9E2715F290001819DF /* Extension */ = {
+		AC061E9E2715F290001819DF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				AC061E9F2715F3DD001819DF /* UITextView+HyperLinks.swift */,
+				AC061E9F2715F3DD001819DF /* UITextViewExtension.swift */,
+				AC2A40142721C33B001268AD /* UITextFieldExtension.swift */,
 			);
-			path = Extension;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
-		ACA4CA292710245B00F350EB /* Storyboards */ = {
+		AC061EA4271B483E001819DF /* Enum */ = {
 			isa = PBXGroup;
 			children = (
-				ACFCCFA026E0F53A00D9A7DF /* Main.storyboard */,
+				AC061EA5271B4873001819DF /* UserDefaultsKeys.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		AC061EA9271F06B0001819DF /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				AC061EB8271F2AC8001819DF /* Services */,
+				AC061E982715D24A001819DF /* Models */,
+				AC061E9D2715D859001819DF /* Entities */,
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		AC061EAA271F086E001819DF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				AC061EA12718A135001819DF /* AppCoordinator.swift */,
+				AC061EA7271B48D4001819DF /* RootViewController.swift */,
+				AC061EAC271F08DC001819DF /* StoryboardCreatable.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		AC061EAB271F087E001819DF /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				AC061E962715D20F001819DF /* Welcome */,
+				AC061EAF271F0BEB001819DF /* Auth */,
+				AC061EAE271F0BDC001819DF /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		AC061EAE271F0BDC001819DF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AC061EB6271F0CE6001819DF /* HomeViewController.swift */,
+				AC061EB4271F0CCF001819DF /* HomeViewController.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AC061EAF271F0BEB001819DF /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				AC061EB0271F0C31001819DF /* AuthViewController.swift */,
+				AC061EB2271F0CB0001819DF /* AuthViewController.storyboard */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		AC061EB8271F2AC8001819DF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AC061EBF2721282A001819DF /* AuthServiceProtocol.swift */,
+				AC061EC1272128A4001819DF /* AuthService.swift */,
+				AC061EBB27207AEE001819DF /* KeychainWrapperProtocol.swift */,
+				AC061EBD27207B4E001819DF /* KeychainWrapper.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		ACA4CA292710245B00F350EB /* UI */ = {
+			isa = PBXGroup;
+			children = (
 				ACFCCFA526E0F53E00D9A7DF /* LaunchScreen.storyboard */,
 			);
-			path = Storyboards;
+			path = UI;
 			sourceTree = "<group>";
 		};
-		ACA4CA2A2710253800F350EB /* Controllers */ = {
+		ACA4CA2A2710253800F350EB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				AC061E962715D20F001819DF /* WelcomeScreen */,
+				AC061EAA271F086E001819DF /* Common */,
+				AC061EAB271F087E001819DF /* Modules */,
 			);
-			path = Controllers;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		ACFCCF8E26E0F53A00D9A7DF = {
@@ -153,13 +255,12 @@
 			children = (
 				ACFCCF9A26E0F53A00D9A7DF /* AppDelegate.swift */,
 				ACFCCF9C26E0F53A00D9A7DF /* SceneDelegate.swift */,
-				AC061E9D2715D859001819DF /* Entity */,
-				AC061E982715D24A001819DF /* Models */,
-				ACA4CA2A2710253800F350EB /* Controllers */,
-				ACA4CA292710245B00F350EB /* Storyboards */,
-				ACFCCFA326E0F53E00D9A7DF /* Assets.xcassets */,
-				AC061E9E2715F290001819DF /* Extension */,
-				AC061E952714B738001819DF /* Welcome screen text json file */,
+				ACA4CA2A2710253800F350EB /* Presentation */,
+				AC061EA9271F06B0001819DF /* BusinessLogic */,
+				ACA4CA292710245B00F350EB /* UI */,
+				AC061E9E2715F290001819DF /* Extensions */,
+				AC061EA4271B483E001819DF /* Enum */,
+				AC061E952714B738001819DF /* Resources */,
 				ACFCCFA826E0F53E00D9A7DF /* Info.plist */,
 			);
 			path = RickandMorty;
@@ -226,8 +327,11 @@
 			files = (
 				ACFCCFA726E0F53E00D9A7DF /* LaunchScreen.storyboard in Resources */,
 				AC061E942714B55A001819DF /* About.json in Resources */,
+				AC061EB3271F0CB0001819DF /* AuthViewController.storyboard in Resources */,
 				ACFCCFA426E0F53E00D9A7DF /* Assets.xcassets in Resources */,
-				ACFCCFA226E0F53A00D9A7DF /* Main.storyboard in Resources */,
+				AC061EC4272129A4001819DF /* User.json in Resources */,
+				ACFCCFA226E0F53A00D9A7DF /* WelcomeViewController.storyboard in Resources */,
+				AC061EB5271F0CCF001819DF /* HomeViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,12 +384,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC061EA02715F3DD001819DF /* UITextView+HyperLinks.swift in Sources */,
+				AC061EBA27207A3C001819DF /* UserModel.swift in Sources */,
+				AC061EAD271F08DC001819DF /* StoryboardCreatable.swift in Sources */,
+				AC061EA02715F3DD001819DF /* UITextViewExtension.swift in Sources */,
+				AC061EB7271F0CE6001819DF /* HomeViewController.swift in Sources */,
 				ACEC691A26E5471300A0F25E /* DataViewController.swift in Sources */,
-				AC061E9A2715D380001819DF /* PageForWelcomeScreen.swift in Sources */,
-				AC061E9C2715D3BD001819DF /* PageForWelcomeScreenModel.swift in Sources */,
+				AC061EB1271F0C31001819DF /* AuthViewController.swift in Sources */,
+				AC061EC2272128A4001819DF /* AuthService.swift in Sources */,
+				AC061EA6271B4873001819DF /* UserDefaultsKeys.swift in Sources */,
+				AC061EC02721282A001819DF /* AuthServiceProtocol.swift in Sources */,
+				AC061EBC27207AEE001819DF /* KeychainWrapperProtocol.swift in Sources */,
+				AC061EBE27207B4E001819DF /* KeychainWrapper.swift in Sources */,
+				AC061EA8271B48D4001819DF /* RootViewController.swift in Sources */,
+				AC061E9A2715D380001819DF /* WelcomeScreenPage.swift in Sources */,
+				AC061E9C2715D3BD001819DF /* WelcomeScreenPageModel.swift in Sources */,
 				ACFCCF9F26E0F53A00D9A7DF /* WelcomeViewController.swift in Sources */,
 				ACFCCF9B26E0F53A00D9A7DF /* AppDelegate.swift in Sources */,
+				AC061EA22718A135001819DF /* AppCoordinator.swift in Sources */,
+				AC2A40152721C33B001268AD /* UITextFieldExtension.swift in Sources */,
 				ACEC691C26E54BB700A0F25E /* CustomPageViewController.swift in Sources */,
 				ACFCCF9D26E0F53A00D9A7DF /* SceneDelegate.swift in Sources */,
 			);
@@ -294,12 +410,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		ACFCCFA026E0F53A00D9A7DF /* Main.storyboard */ = {
+		ACFCCFA026E0F53A00D9A7DF /* WelcomeViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				ACFCCFA126E0F53A00D9A7DF /* Base */,
 			);
-			name = Main.storyboard;
+			name = WelcomeViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		ACFCCFA526E0F53E00D9A7DF /* LaunchScreen.storyboard */ = {
