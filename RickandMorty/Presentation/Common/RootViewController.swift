@@ -7,11 +7,11 @@ class RootViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = .init(red: 254 / 255, green: 254 / 255, blue: 51 / 255, alpha: 1.0)
   }
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    self.view.backgroundColor = .init(red: 254, green: 254, blue: 51, alpha: 1)
     if UserDefaults.standard.bool(forKey: UserDefaultsKeys.didLogin.rawValue) {
       self.homeScreenFlow?()
     } else {

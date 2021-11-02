@@ -131,7 +131,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate, StoryboardCreat
       let passwordText = password.text
     else { return }
     if self.authService.logIn(login: loginText, password: passwordText) {
-      self.present(HomeViewController.createFromStoryboard, animated: true, completion: nil)
+      self.present(CustomTabBarViewController.createFromStoryboard, animated: true, completion: nil)
     } else {
       showErrorAlert()
       changeTextColor(color: UIColor.red)

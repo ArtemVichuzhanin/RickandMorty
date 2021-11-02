@@ -39,6 +39,6 @@ final class AppCoordinator: AppCoordinatorProtocol {
     }
 
     private func showHomeScreen() {
-      self.rootController?.present(HomeViewController.createFromStoryboard, animated: true, completion: nil)
+      self.rootController?.present(CharactersViewController.createFromStoryboard, animated: true, completion: nil)
     }
 }
