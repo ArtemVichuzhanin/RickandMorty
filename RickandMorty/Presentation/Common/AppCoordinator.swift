@@ -21,7 +21,9 @@ final class AppCoordinator: AppCoordinatorProtocol {
       self.showLoginScreen()
     } else {
       UserDefaults.standard.set(true, forKey: UserDefaultsKeys.notfirstStart.rawValue)
+
       guard let welcomeVC = WelcomeViewController.createFromStoryboard as? WelcomeViewController else { return }
+
       welcomeVC.onSkipTapped = { [weak self] in
         self?.showLoginScreen()
       }

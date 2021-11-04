@@ -1,13 +1,13 @@
 import UIKit
 
 class DataViewController: UIViewController {
-  @IBOutlet weak var pageTitle: UILabel!
-  @IBOutlet weak var pageDescription: UITextView!
   var links: [String: String]?
-
   var textTitle = ""
   var textDescription = ""
   let fontSize = 20
+
+  @IBOutlet weak var pageTitle: UILabel!
+  @IBOutlet weak var pageDescription: UITextView!
 
   override func viewDidLoad() {
     super.viewDidLoad()

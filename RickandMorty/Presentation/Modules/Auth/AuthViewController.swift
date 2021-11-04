@@ -1,13 +1,19 @@
 import UIKit
 
-class AuthViewController: UIViewController, UITextFieldDelegate, StoryboardCreatable {
+class AuthViewController: UIViewController, StoryboardCreatable {
   private let authService: AuthServiceProtocol = AuthService()
+  var activeTextField: UITextField?
   @IBOutlet weak var login: UITextField!
   @IBOutlet weak var password: UITextField!
   @IBOutlet weak var loginButton: UIButton!
   @IBOutlet weak var secureButton: UIButton!
-  var activeTextField: UITextField?
 
+  private var windowInterfaceOrientation: UIInterfaceOrientation? {
+    return UIApplication.shared.connectedScenes
+      .filter { $0.activationState == .foregroundActive }
+      .first { $0 is UIWindowScene }
+      .flatMap { $0 as? UIWindowScene }?.interfaceOrientation
+  }
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
@@ -45,6 +51,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate, StoryboardCreat
 
   @objc func keyboardWillAppear(sender: NSNotification) {
     guard let currentTextField = self.activeTextField else { return }
+
     if let keyboardSize = (sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
       if currentTextField.frame.origin.y > keyboardSize.origin.y {
         self.view.frame.origin.y = keyboardSize.origin.y - currentTextField.center.y - 20
@@ -56,35 +63,12 @@ class AuthViewController: UIViewController, UITextFieldDelegate, StoryboardCreat
     self.view.frame.origin.y = 0
   }
 
-  func textFieldDidBeginEditing(_ textField: UITextField) {
-    self.activeTextField = textField
-    if self.login.textColor == UIColor.red {
-      changeTextColor(color: UIColor.black)
-    }
-  }
-
-  func textFieldDidEndEditing(_ textField: UITextField) {
-    guard
-      let loginText = self.login.text,
-      let passwordText = self.password.text
-    else { return }
-    if loginText.isEmpty || passwordText.isEmpty {
-      self.loginButton.isEnabled = false
-    } else {
-      self.loginButton.isEnabled = true
-    }
-  }
-
-  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    textField.resignFirstResponder()
-    return true
-  }
-
   private func showErrorAlert() {
     let alertTitle = "Error"
     let range = (alertTitle as NSString).range(of: alertTitle)
     let attribute = NSMutableAttributedString.init(string: alertTitle)
     attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: range)
+
     let alert = UIAlertController(title: "", message: "Incorrect Login or Password", preferredStyle: .alert)
     alert.setValue(attribute, forKey: "attributedTitle")
     alert.addAction(UIAlertAction(title: "OK", style: .default))
@@ -121,20 +105,45 @@ class AuthViewController: UIViewController, UITextFieldDelegate, StoryboardCreat
     self.password.addBottomBorder()
   }
 
-  private var windowInterfaceOrientation: UIInterfaceOrientation? {
-    return UIApplication.shared.windows.first?.windowScene?.interfaceOrientation
-  }
-
   @IBAction private func onLoginTapped() {
     guard
       let loginText = login.text,
       let passwordText = password.text
     else { return }
+
     if self.authService.logIn(login: loginText, password: passwordText) {
       self.present(CustomTabBarViewController.createFromStoryboard, animated: true, completion: nil)
     } else {
       showErrorAlert()
       changeTextColor(color: UIColor.red)
     }
+  }
+}
+
+extension AuthViewController: UITextFieldDelegate {
+  func textFieldDidBeginEditing(_ textField: UITextField) {
+    self.activeTextField = textField
+
+    if self.login.textColor == UIColor.red {
+      changeTextColor(color: UIColor.black)
+    }
+  }
+
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    guard
+      let loginText = self.login.text,
+      let passwordText = self.password.text
+    else { return }
+
+    if loginText.isEmpty || passwordText.isEmpty {
+      self.loginButton.isEnabled = false
+    } else {
+      self.loginButton.isEnabled = true
+    }
+  }
+
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return true
   }
 }

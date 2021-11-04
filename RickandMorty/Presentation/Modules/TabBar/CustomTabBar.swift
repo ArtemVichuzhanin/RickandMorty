@@ -4,6 +4,13 @@ import UIKit
 class CustomTabBar: UITabBar {
   private var shapeLayer: CALayer?
 
+  private var safeAreaBottomInsets: CGFloat {
+    return UIApplication.shared.connectedScenes
+      .filter { $0.activationState == .foregroundActive }
+      .first { $0 is UIWindowScene }
+      .flatMap { $0 as? UIWindowScene }?.keyWindow?.safeAreaInsets.bottom ?? 0
+  }
+
   override func draw(_ rect: CGRect) {
     drawTabBar()
   }
@@ -23,10 +30,11 @@ class CustomTabBar: UITabBar {
 
   private func createPath() -> CGPath {
     let tabBarWidth = self.frame.width
-    let tabBarHeight = self.frame.height - 34
+    let tabBarHeight = self.frame.height - safeAreaBottomInsets
     let centerWidth = self.frame.width / 2
     let radius: CGFloat = 36
     let path = UIBezierPath()
+
     path.move(to: CGPoint(x: 0, y: 0))
     path.addLine(to: CGPoint(x: centerWidth - radius, y: 0))
     path.addArc(
@@ -40,6 +48,7 @@ class CustomTabBar: UITabBar {
     path.addLine(to: CGPoint(x: tabBarWidth, y: tabBarHeight))
     path.addLine(to: CGPoint(x: 0, y: tabBarHeight))
     path.close()
+
     return path.cgPath
   }
 

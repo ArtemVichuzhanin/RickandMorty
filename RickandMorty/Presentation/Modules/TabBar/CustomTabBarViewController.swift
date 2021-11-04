@@ -1,8 +1,8 @@
 import UIKit
 
-class CustomTabBarViewController: UITabBarController, StoryboardCreatable, UITabBarControllerDelegate {
+class CustomTabBarViewController: UITabBarController, StoryboardCreatable {
   private let favoritesButtonSize: CGFloat = 56
-  private var favoritesButton = UIButton(configuration: .filled(), primaryAction: nil)
+  private var favoritesButton = UIButton(type: .custom) as UIButton
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -12,6 +12,7 @@ class CustomTabBarViewController: UITabBarController, StoryboardCreatable, UITab
 
   private func setupView() {
     guard let appearance = self.tabBar.scrollEdgeAppearance else { return }
+
     appearance.stackedLayoutAppearance.selected.titleTextAttributes = [
       NSAttributedString.Key.foregroundColor: UIColor.white,
       NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 11)
@@ -41,6 +42,7 @@ class CustomTabBarViewController: UITabBarController, StoryboardCreatable, UITab
 
   private func setupFavoritesButton() {
     var favoritesButtonConfiguration = UIButton.Configuration.filled()
+
     favoritesButtonConfiguration.background.cornerRadius = favoritesButtonSize / 2
     favoritesButtonConfiguration.baseBackgroundColor = UIColor(named: AppColorKeys.colorForInterface.rawValue)
     favoritesButtonConfiguration.baseForegroundColor = .white
@@ -61,9 +63,11 @@ class CustomTabBarViewController: UITabBarController, StoryboardCreatable, UITab
 
   @objc private func onFavoritesTapped(sender: UIButton) {
     selectedIndex = 2
-    sender.configuration?.baseForegroundColor = UIColor(named: AppColorKeys.colorForSelectedItem.rawValue)
-  }
+    sender.configuration?.baseForegroundColor = UIColor(named:  AppColorKeys.colorForSelectedItem.rawValue)
+    }
+}
 
+extension CustomTabBarViewController: UITabBarControllerDelegate {
   override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
     if self.tabBar.selectedItem?.tag != 2 {
       favoritesButton.configuration?.baseForegroundColor = .white
