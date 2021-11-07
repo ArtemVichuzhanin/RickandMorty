@@ -61,8 +61,9 @@ class WelcomeViewController: UIViewController, StoryboardCreatable {
   }
 
   func configurePageControl() {
-    self.pageControl.pageIndicatorTintColor = .init(red: 0, green: 142, blue: 214, alpha: 1)
-    self.pageControl.currentPageIndicatorTintColor = .init(red: 0, green: 142, blue: 214, alpha: 1)
+    self.pageControl.pageIndicatorTintColor = UIColor(named: AppColorKeys.colorForInterface.rawValue)
+    self.pageControl.currentPageIndicatorTintColor = UIColor(named: AppColorKeys.colorForInterface.rawValue)
+
     self.pageControl.numberOfPages = pageList.pages.count
     self.pageControl.currentPage = currentViewControllerIndex
     self.pageControl.isUserInteractionEnabled = false
@@ -105,6 +106,7 @@ class WelcomeViewController: UIViewController, StoryboardCreatable {
 extension WelcomeViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
   func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
     guard var currentIndex = pageViewController.viewControllers?.first?.view.tag else { return nil }
+
     currentViewControllerIndex = currentIndex
 
     if currentIndex == 0 { return nil }

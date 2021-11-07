@@ -22,7 +22,7 @@ class CustomTabBarViewController: UITabBarController, StoryboardCreatable {
     ]
     self.tabBar.scrollEdgeAppearance = appearance
 
-    let charactersViewController = CharactersViewController.createFromStoryboard
+    let charactersViewController = CharactersTableViewController.createFromStoryboard
     let locationsViewController = LocationsViewController.createFromStoryboard
     let favoritesViewController = FavoritesViewController.createFromStoryboard
     let statisticsViewController = StatisticsViewController.createFromStoryboard
@@ -63,9 +63,11 @@ class CustomTabBarViewController: UITabBarController, StoryboardCreatable {
 
   @objc private func onFavoritesTapped(sender: UIButton) {
     selectedIndex = 2
-    sender.configuration?.baseForegroundColor = UIColor(named:  AppColorKeys.colorForSelectedItem.rawValue)
+    sender.configuration?.baseForegroundColor = UIColor(named: AppColorKeys.colorForSelectedItem.rawValue)
     }
 }
+
+// MARK: - Extension UITabBarController
 
 extension CustomTabBarViewController: UITabBarControllerDelegate {
   override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
