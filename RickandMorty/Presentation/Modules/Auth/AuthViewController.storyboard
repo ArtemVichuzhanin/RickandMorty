@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -117,8 +116,6 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="qZN-Hz-yfp"/>
-                                <exclude reference="Twa-9F-6fk"/>
-                                <exclude reference="idW-My-UPv"/>
                                 <exclude reference="4iF-N2-Khp"/>
                                 <exclude reference="5oW-GL-Dri"/>
                                 <exclude reference="R4L-KY-Sd5"/>
@@ -127,6 +124,8 @@
                                 <exclude reference="3Co-ab-aQf"/>
                                 <exclude reference="cjo-gG-FHU"/>
                                 <exclude reference="q58-lY-wJ7"/>
+                                <exclude reference="Twa-9F-6fk"/>
+                                <exclude reference="idW-My-UPv"/>
                                 <exclude reference="LVQ-OI-6Hp"/>
                                 <exclude reference="mpk-v2-MlB"/>
                                 <exclude reference="qC3-6V-X38"/>
@@ -135,27 +134,28 @@
                         <variation key="heightClass=compact">
                             <mask key="constraints">
                                 <include reference="qZN-Hz-yfp"/>
-                                <include reference="idW-My-UPv"/>
                                 <include reference="5oW-GL-Dri"/>
                                 <include reference="R4L-KY-Sd5"/>
                                 <include reference="3Co-ab-aQf"/>
                                 <include reference="q58-lY-wJ7"/>
+                                <include reference="idW-My-UPv"/>
                                 <include reference="LVQ-OI-6Hp"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="constraints">
-                                <include reference="Twa-9F-6fk"/>
                                 <include reference="4iF-N2-Khp"/>
                                 <include reference="f5e-VK-VFM"/>
                                 <include reference="2Br-Y5-VvA"/>
                                 <include reference="cjo-gG-FHU"/>
+                                <include reference="Twa-9F-6fk"/>
                                 <include reference="mpk-v2-MlB"/>
                                 <include reference="qC3-6V-X38"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="launchImage" destination="eHd-oA-xfT" id="FZJ-qt-srz"/>
                         <outlet property="login" destination="DVV-F4-TXG" id="5PO-ff-leh"/>
                         <outlet property="loginButton" destination="YTo-uF-SK2" id="jsc-TK-1kU"/>
                         <outlet property="password" destination="kf1-s4-ZxV" id="g1O-Z3-qul"/>

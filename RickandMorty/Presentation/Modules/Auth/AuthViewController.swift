@@ -2,12 +2,15 @@ import UIKit
 
 class AuthViewController: UIViewController, StoryboardCreatable {
   private let authService: AuthServiceProtocol = AuthService()
+
   var activeTextField: UITextField?
+
   @IBOutlet weak var login: UITextField!
   @IBOutlet weak var password: UITextField!
   @IBOutlet weak var loginButton: UIButton!
   @IBOutlet weak var secureButton: UIButton!
-
+  @IBOutlet weak var launchImage: UIImageView!
+  
   private var windowInterfaceOrientation: UIInterfaceOrientation? {
     return UIApplication.shared.connectedScenes
       .filter { $0.activationState == .foregroundActive }
@@ -19,6 +22,11 @@ class AuthViewController: UIViewController, StoryboardCreatable {
     super.viewWillAppear(animated)
     setupView()
     addKeyboardListeners()
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    animateAuthViewElements()
   }
 
   override func viewWillDisappear(_ animated: Bool) {
@@ -45,8 +53,11 @@ class AuthViewController: UIViewController, StoryboardCreatable {
     self.login.addBottomBorder()
     self.password.addBottomBorder()
     self.secureButton.setTitle("", for: .normal)
+
     self.login.delegate = self
     self.password.delegate = self
+
+    self.launchImage.alpha = 0
   }
 
   @objc func keyboardWillAppear(sender: NSNotification) {
@@ -106,6 +117,7 @@ class AuthViewController: UIViewController, StoryboardCreatable {
   }
 
   @IBAction private func onLoginTapped() {
+    animateButton()
     guard
       let loginText = login.text,
       let passwordText = password.text
@@ -117,6 +129,41 @@ class AuthViewController: UIViewController, StoryboardCreatable {
       showErrorAlert()
       changeTextColor(color: UIColor.red)
     }
+  }
+
+  private func animateButton() {
+    self.loginButton.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+
+    UIView.animate(
+      withDuration: 0.4,
+      delay: 0,
+      usingSpringWithDamping: CGFloat(0.9),
+      initialSpringVelocity: CGFloat(1.5),
+      options: UIView.AnimationOptions.allowUserInteraction,
+      animations: {
+        self.loginButton.transform = CGAffineTransform.identity
+      },
+      completion: nil
+    )
+  }
+
+  private func animateAuthViewElements() {
+    UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn) {
+      self.launchImage.alpha = 1
+    }
+    self.launchImage.transform = CGAffineTransform(scaleX: 0.4, y: 0.4)
+
+    UIView.animate(
+      withDuration: 0.7,
+      delay: 0.1,
+      usingSpringWithDamping: CGFloat(0.2),
+      initialSpringVelocity: CGFloat(4.6),
+      options: UIView.AnimationOptions.allowUserInteraction,
+      animations: {
+        self.launchImage.transform = CGAffineTransform.identity
+      },
+      completion: nil
+    )
   }
 }
 
