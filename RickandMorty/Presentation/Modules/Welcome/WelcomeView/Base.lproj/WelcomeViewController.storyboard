@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Welcome View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="RickandMorty" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="WelcomeVC" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4oW-ot-z9g">
+                                <rect key="frame" x="16" y="274" width="382" height="358"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVZ-ez-gQU">
+                                <rect key="frame" x="163" y="755" width="88" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Skip">
+                                    <color key="titleColor" systemColor="systemBlueColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTappedAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="MA3-w6-IXS"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="3p1-lT-vgP">
+                                <rect key="frame" x="129.5" y="637" width="155.5" height="26"/>
+                            </pageControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4oW-ot-z9g" secondAttribute="bottom" constant="230" id="5Dk-mE-7ad"/>
+                            <constraint firstItem="4oW-ot-z9g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="8Il-HV-5Mb"/>
+                            <constraint firstItem="4oW-ot-z9g" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="230" id="9lT-f2-Frt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LVZ-ez-gQU" secondAttribute="bottom" constant="68" id="N48-tC-d8n"/>
+                            <constraint firstItem="LVZ-ez-gQU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="163" id="hcw-rb-4lP"/>
+                            <constraint firstItem="3p1-lT-vgP" firstAttribute="top" secondItem="4oW-ot-z9g" secondAttribute="bottom" constant="5" id="jxW-49-lR1"/>
+                            <constraint firstItem="4oW-ot-z9g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p13-xO-joT"/>
+                            <constraint firstItem="LVZ-ez-gQU" firstAttribute="centerX" secondItem="4oW-ot-z9g" secondAttribute="centerX" id="p8J-Qu-xGU"/>
+                            <constraint firstItem="3p1-lT-vgP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zFI-sq-ck9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="4oW-ot-z9g" id="NVd-5o-dkG"/>
+                        <outlet property="pageControl" destination="3p1-lT-vgP" id="Wax-Le-EYI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="144.92753623188406" y="11.383928571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

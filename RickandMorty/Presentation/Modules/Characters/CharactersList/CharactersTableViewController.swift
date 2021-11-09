@@ -16,13 +16,16 @@ class CharactersTableViewController: UITableViewController, StoryboardCreatable 
   private let searchBarController = UISearchController()
 
   private var isSearchBarEmpty: Bool {
-    return searchBarController.searchBar.text?.isEmpty ?? true
+    return self.searchBarController.searchBar.text?.isEmpty ?? true
   }
   private var isFiltering: Bool {
-    return !searchBarController.searchBar.isHidden && !isSearchBarEmpty
+    return !self.searchBarController.searchBar.isHidden && !isSearchBarEmpty
+  }
+  private var isFilterRequestDone: Bool {
+    return self.filterCharactersInfo != nil
   }
   private var charactersCount: Int {
-    return charactersInfo?.info.count ?? 0
+    return self.charactersInfo?.info.count ?? 0
   }
 
   override func viewDidLoad() {
@@ -37,6 +40,12 @@ class CharactersTableViewController: UITableViewController, StoryboardCreatable 
       self?.requestAPI(pageNumber: currentPage)
     }
     setupView()
+    showLoadingIndicator()
+  }
+
+  override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
+    self.cancelRequestAPI()
   }
 
   private func setupView() {
@@ -48,8 +57,8 @@ class CharactersTableViewController: UITableViewController, StoryboardCreatable 
     navigationBar?.standardAppearance = apperance
     navigationBar?.scrollEdgeAppearance = apperance
 
-    searchBarController.delegate = self
-    tableView.prefetchDataSource = self
+    self.searchBarController.searchBar.delegate = self
+    self.tableView.prefetchDataSource = self
 
     setupLoadingIndicator()
     setupSearchBar()
@@ -58,8 +67,15 @@ class CharactersTableViewController: UITableViewController, StoryboardCreatable 
   private func setupLoadingIndicator() {
     self.loadingIndicator.hidesWhenStopped = true
     self.loadingIndicator.style = .large
-    self.loadingIndicator.startAnimating()
     self.tableView.backgroundView = self.loadingIndicator
+  }
+
+  private func showLoadingIndicator() {
+    self.loadingIndicator.startAnimating()
+  }
+
+  private func hideLoadingIndicator() {
+    self.loadingIndicator.stopAnimating()
   }
 
   private func setupSearchBar() {
@@ -75,7 +91,10 @@ class CharactersTableViewController: UITableViewController, StoryboardCreatable 
   }
 
   private func requestAPI(pageNumber: Int) {
-    guard !isFetchInProgress else { return }
+    guard !isFetchInProgress else {
+      print("Fetch in Progress")
+      return
+    }
 
     isFetchInProgress = true
 
@@ -85,8 +104,10 @@ class CharactersTableViewController: UITableViewController, StoryboardCreatable 
       } catch {
         DispatchQueue.main.async {
           self.isFetchInProgress = false
+
           let errorMessage = errorHandling(error: error)
-          self.showErrorAlert(msg: errorMessage.outputMsg)
+
+          self.onFetchFailed(with: errorMessage.outputMsg)
         }
       }
 
@@ -110,13 +131,31 @@ class CharactersTableViewController: UITableViewController, StoryboardCreatable 
 
   private func showErrorAlert(msg: String) {
     let alertTitle = "Request error"
+
     let range = (alertTitle as NSString).range(of: alertTitle)
     let attribute = NSMutableAttributedString.init(string: alertTitle)
     attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: range)
 
     let alert = UIAlertController(title: "", message: msg, preferredStyle: .alert)
+
     alert.setValue(attribute, forKey: "attributedTitle")
+
+    let retryAction = UIAlertAction(title: "Retry", style: .default) { _ in
+      self.retryRequestAPI()
+    }
+
+    alert.addAction(retryAction)
+    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+
+    self.present(alert, animated: true, completion: nil)
+  }
+
+  private func showInformationAlert(with searchName: String) {
+    let alertMessage = "Character with name: \"\(searchName)\" not found"
+    let alert = UIAlertController(title: "Not found", message: alertMessage, preferredStyle: .alert)
+
     alert.addAction(UIAlertAction(title: "OK", style: .default))
+
     self.present(alert, animated: true, completion: nil)
   }
 
@@ -128,14 +167,38 @@ class CharactersTableViewController: UITableViewController, StoryboardCreatable 
 
   private func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
     guard let newIndexPathsToReload = newIndexPathsToReload else {
-      self.loadingIndicator.stopAnimating()
-      self.tableView.isScrollEnabled = true
-      self.tableView.isHidden = false
+      self.hideLoadingIndicator()
       self.tableView.reloadData()
       return
     }
     let indexPathsToReload = visibleIndexPathsToReload(intersecting: newIndexPathsToReload)
     tableView.reloadRows(at: indexPathsToReload, with: .automatic)
+  }
+
+  private func onFetchFailed(with reason: String) {
+    self.hideLoadingIndicator()
+
+    self.showErrorAlert(msg: reason)
+  }
+
+  private func retryRequestAPI() {
+    if isFiltering {
+      guard let searchText = self.searchBarController.searchBar.text
+      else {
+        print("SearchBar.text is nil")
+        return
+      }
+      self.searchRequestAPI(with: searchText)
+    } else {
+      DispatchQueue.global(qos: .utility).async { [weak self] in
+        guard let currentPage = self?.currentPage else { return }
+        self?.requestAPI(pageNumber: currentPage)
+      }
+    }
+  }
+
+  private func cancelRequestAPI() {
+    self.clientAPI?.characters().cancelRequest()
   }
 }
 
@@ -144,6 +207,8 @@ class CharactersTableViewController: UITableViewController, StoryboardCreatable 
 extension CharactersTableViewController {
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if isFiltering {
+      guard isFilterRequestDone else { return 0 }
+
       return self.filterCharacters.count
     } else {
       return self.charactersCount
@@ -160,7 +225,7 @@ extension CharactersTableViewController {
     if isLoadingCell(for: indexPath) {
       cell.configure(with: .none)
     } else {
-      if isFiltering {
+      if isFilterRequestDone {
         cell.configure(with: self.filterCharacters[indexPath.row])
       } else {
         cell.configure(with: self.characters[indexPath.row])
@@ -170,47 +235,61 @@ extension CharactersTableViewController {
   }
 }
 
-// MARK: - Extension UISearchControllerDelegate
+// MARK: - Extension UISearchBarDelegate
 
-extension CharactersTableViewController: UISearchControllerDelegate {
+extension CharactersTableViewController: UISearchBarDelegate {
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     self.searchTimer?.invalidate()
 
+    if searchText.isEmpty {
+      return
+    }
+
     searchTimer = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: false) { [weak self] _ in
-      DispatchQueue.global(qos: .userInteractive).async { [weak self] in
-        guard !(self?.isFetchInProgress ?? false) else { return }
-
-        self?.isFetchInProgress = true
-
-        self?.clientAPI?.characters().getCharactersByNameFilter(nameFilter: searchText) { responseAPI in
-          do {
-            try self?.filterCharactersInfo = responseAPI.get()
-          } catch {
-            DispatchQueue.main.async {
-              self?.isFetchInProgress = false
-              let errorMessage = errorHandling(error: error)
-              if errorMessage.code != 404 {
-                self?.showErrorAlert(msg: errorMessage.outputMsg)
-              }
-              self?.filterCharacters.removeAll()
-              self?.filterCharactersInfo = nil
-            }
-          }
-        }
-        DispatchQueue.main.async {
-          guard let result = self?.filterCharactersInfo?.results else { return }
-
-          self?.isFetchInProgress = false
-          self?.filterCharacters = result
-          self?.tableView.reloadData()
-        }
-      }
+      self?.showLoadingIndicator()
+      self?.searchRequestAPI(with: searchText)
+      self?.isFetchInProgress = true
     }
   }
 
   func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
     self.searchBarController.searchBar.text = ""
     self.filterCharacters.removeAll()
+    self.filterCharactersInfo = nil
+    self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .middle, animated: true)
+    self.tableView.reloadData()
+  }
+
+  private func searchRequestAPI(with searchText: String) {
+    DispatchQueue.global(qos: .userInteractive).async { [weak self] in
+      self?.clientAPI?.characters().getCharactersByNameFilter(nameFilter: searchText) { responseAPI in
+        do {
+          try self?.filterCharactersInfo = responseAPI.get()
+        } catch {
+          DispatchQueue.main.async {
+            self?.isFetchInProgress = false
+
+            let errorMessage = errorHandling(error: error)
+
+            if errorMessage.code == 404 {
+              self?.showInformationAlert(with: searchText)
+            } else {
+              self?.onFetchFailed(with: errorMessage.outputMsg)
+            }
+            self?.filterCharacters.removeAll()
+            self?.filterCharactersInfo = nil
+          }
+        }
+      }
+      DispatchQueue.main.async {
+        self?.isFetchInProgress = false
+
+        guard let result = self?.filterCharactersInfo?.results else { return }
+
+        self?.filterCharacters = result
+        self?.onFetchCompleted(with: .none)
+      }
+    }
   }
 }
 
@@ -218,7 +297,13 @@ extension CharactersTableViewController: UISearchControllerDelegate {
 
 extension CharactersTableViewController: UITableViewDataSourcePrefetching {
   func isLoadingCell(for indexPath: IndexPath) -> Bool {
-    return indexPath.row >= self.characters.count
+    if isFiltering {
+      guard isFilterRequestDone else { return true }
+
+      return indexPath.row >= self.filterCharacters.count
+    } else {
+      return indexPath.row >= self.characters.count
+    }
   }
 
   func visibleIndexPathsToReload(intersecting indexPaths: [IndexPath]) -> [IndexPath] {
@@ -228,8 +313,10 @@ extension CharactersTableViewController: UITableViewDataSourcePrefetching {
   }
 
   func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+    guard !isFiltering else { return }
+
     if indexPaths.contains(where: isLoadingCell) {
       self.requestAPI(pageNumber: self.currentPage)
-      }
+    }
   }
 }

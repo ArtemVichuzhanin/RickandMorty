@@ -1,11 +1,11 @@
 import UIKit
 
 class WelcomeViewController: UIViewController, StoryboardCreatable {
-  var currentViewControllerIndex = 0
-  var pageList = WelcomePageModel()
+  private var currentViewControllerIndex = 0
+  private var pageList = WelcomePageModel()
   var onSkipTapped: (() -> Void)?
-  @IBOutlet weak var contentView: UIView!
-  @IBOutlet weak var pageControl: UIPageControl!
+  @IBOutlet weak private var contentView: UIView!
+  @IBOutlet weak private var pageControl: UIPageControl!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -14,7 +14,7 @@ class WelcomeViewController: UIViewController, StoryboardCreatable {
     configurePageControl()
   }
 
-  func loadPageTextFromJson() {
+  private func loadPageTextFromJson() {
     if let urlPath = Bundle.main.url(forResource: "About", withExtension: "json") {
       do {
         let data = try Data(contentsOf: urlPath)
@@ -30,9 +30,9 @@ class WelcomeViewController: UIViewController, StoryboardCreatable {
     }
   }
 
-  func configurePageViewController() {
-    guard let pageViewController = storyboard?.instantiateViewController(
-      withIdentifier: String(describing: CustomPageViewController.self)) as? CustomPageViewController else { return }
+  private func configurePageViewController() {
+    guard let pageViewController = CustomPageViewController.createFromStoryboard as? CustomPageViewController
+    else { return }
 
     pageViewController.delegate = self
     pageViewController.dataSource = self
@@ -60,7 +60,7 @@ class WelcomeViewController: UIViewController, StoryboardCreatable {
     pageViewController.setViewControllers([startingViewController], direction: .forward, animated: true)
   }
 
-  func configurePageControl() {
+  private func configurePageControl() {
     self.pageControl.pageIndicatorTintColor = UIColor(named: AppColorKeys.colorForInterface.rawValue)
     self.pageControl.currentPageIndicatorTintColor = UIColor(named: AppColorKeys.colorForInterface.rawValue)
 
@@ -71,7 +71,7 @@ class WelcomeViewController: UIViewController, StoryboardCreatable {
     updatePageControlUI(currentViewControllerIndex)
   }
 
-  func updatePageControlUI(_ currentPage: Int) {
+  private func updatePageControlUI(_ currentPage: Int) {
     (0..<self.pageControl.numberOfPages).forEach { (index) in
       let activePageIconImage = UIImage(named: "current_page_dot")
       let otherPageIconImage = UIImage(named: "other_page_dot")
@@ -80,22 +80,20 @@ class WelcomeViewController: UIViewController, StoryboardCreatable {
     }
   }
 
-  func detailViewControllerAt(index: Int) -> DataViewController? {
+  private func detailViewControllerAt(index: Int) -> DataViewController? {
     if index >= pageList.pages.count || pageList.pages.isEmpty {
       return nil
     }
 
-    guard let dataViewController = storyboard?.instantiateViewController(
-    withIdentifier: String(describing: DataViewController.self)) as? DataViewController else { return nil }
+    guard let dataViewController = DataViewController.createFromStoryboard as? DataViewController else { return nil }
 
-    dataViewController.textTitle = pageList.pages[index].topic
-    dataViewController.textDescription = pageList.pages[index].description
-    dataViewController.links = pageList.pages[index].links
+    dataViewController.loadViewIfNeeded()
+    dataViewController.configure(with: pageList.pages[index])
     dataViewController.view.tag = index
     return dataViewController
   }
 
-  @IBAction func buttonTappedAction() {
+  @IBAction private func buttonTappedAction() {
     self.dismiss(animated: true)
     self.onSkipTapped?()
   }

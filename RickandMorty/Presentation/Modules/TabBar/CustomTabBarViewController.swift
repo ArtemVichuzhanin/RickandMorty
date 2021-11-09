@@ -23,7 +23,7 @@ class CustomTabBarViewController: UITabBarController, StoryboardCreatable {
     self.tabBar.scrollEdgeAppearance = appearance
 
     let charactersViewController = CharactersTableViewController.createFromStoryboard
-    let locationsViewController = LocationsViewController.createFromStoryboard
+    let locationsViewController = LocationsTableViewController.createFromStoryboard
     let favoritesViewController = FavoritesViewController.createFromStoryboard
     let statisticsViewController = StatisticsViewController.createFromStoryboard
     let episodesViewController = EpisodesViewController.createFromStoryboard

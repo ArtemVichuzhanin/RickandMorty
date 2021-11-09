@@ -1,6 +1,6 @@
 import UIKit
 
-class LocationsViewController: UITableViewController, StoryboardCreatable {
+class CustomPageViewController: UIPageViewController, StoryboardCreatable {
   override func viewDidLoad() {
     super.viewDidLoad()
   }

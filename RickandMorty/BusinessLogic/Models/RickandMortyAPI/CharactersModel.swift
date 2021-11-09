@@ -3,6 +3,12 @@ import Alamofire
 
 public struct CharactersModel {
   private var baseURL: String = "https://rickandmortyapi.com/api/"
+  private let sessionManager = Alamofire.Session.default
+  private var request: DataRequest?
+
+  private var inProgress: Bool {
+    return !(request?.isCancelled ?? false)
+  }
 
   func getCharactersByPageNumber(pageNumber: Int, completion: @escaping (Result<CharacterInfo, AFError>) -> Void) {
     guard let url = URL(string: "\(baseURL)/character?page=\(String(pageNumber))") else {
@@ -10,7 +16,7 @@ public struct CharactersModel {
       return
     }
 
-    AF.request(url)
+    sessionManager.request(url)
       .validate()
       .responseDecodable(of: CharacterInfo.self) { response in
         switch response.result {
@@ -24,12 +30,17 @@ public struct CharactersModel {
   }
 
   func getCharactersByNameFilter(nameFilter: String, completion: @escaping (Result<CharacterInfo, AFError>) -> Void) {
-    guard let url = URL(string: "\(baseURL)/character/?name=\(nameFilter)") else {
+    guard let encodedNameFilter = nameFilter.addingPercentEncoding(withAllowedCharacters: .afURLQueryAllowed) else {
+      print("Failed URLpercent encoding")
+      return
+    }
+
+    guard let url = URL(string: "\(baseURL)/character/?name=\(encodedNameFilter)") else {
       print("invalid URL")
       return
     }
 
-    AF.request(url)
+    sessionManager.request(url)
       .validate()
       .responseDecodable(of: CharacterInfo.self) { response in
         switch response.result {
@@ -40,5 +51,9 @@ public struct CharactersModel {
           completion(.failure(error))
         }
       }
+  }
+
+  func cancelRequest() {
+    sessionManager.cancelAllRequests()
   }
 }
