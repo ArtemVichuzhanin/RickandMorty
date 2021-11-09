@@ -26,7 +26,7 @@ class CustomTabBarViewController: UITabBarController, StoryboardCreatable {
     let locationsViewController = LocationsTableViewController.createFromStoryboard
     let favoritesViewController = FavoritesViewController.createFromStoryboard
     let statisticsViewController = StatisticsViewController.createFromStoryboard
-    let episodesViewController = EpisodesViewController.createFromStoryboard
+    let episodesViewController = EpisodesTableViewController.createFromStoryboard
 
     viewControllers = [
       charactersViewController,

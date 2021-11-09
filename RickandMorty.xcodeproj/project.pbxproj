@@ -44,14 +44,18 @@
 		AC2A4023272B16EC001268AD /* LocationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A4022272B16EC001268AD /* LocationsTableViewController.swift */; };
 		AC2A4025272B1722001268AD /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A4024272B1722001268AD /* StatisticsViewController.swift */; };
 		AC2A4027272B174A001268AD /* StatisticsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2A4026272B174A001268AD /* StatisticsViewController.storyboard */; };
-		AC2A4029272B1764001268AD /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A4028272B1764001268AD /* EpisodesViewController.swift */; };
-		AC2A402B272B1770001268AD /* EpisodesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2A402A272B1770001268AD /* EpisodesViewController.storyboard */; };
+		AC2A4029272B1764001268AD /* EpisodesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A4028272B1764001268AD /* EpisodesTableViewController.swift */; };
+		AC2A402B272B1770001268AD /* EpisodesTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2A402A272B1770001268AD /* EpisodesTableViewController.storyboard */; };
 		AC2A402E272B1BAA001268AD /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A402D272B1BAA001268AD /* FavoritesViewController.swift */; };
 		AC2A4030272B1BC8001268AD /* FavoritesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2A402F272B1BC8001268AD /* FavoritesViewController.storyboard */; };
 		AC5AB3B3273AA3F10036F326 /* LocationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AB3B2273AA3F10036F326 /* LocationsTableViewCell.swift */; };
 		AC5AB3B6273AA72C0036F326 /* LocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AB3B5273AA72C0036F326 /* LocationInfo.swift */; };
 		AC5AB3B8273AA7A40036F326 /* LocationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AB3B7273AA7A40036F326 /* LocationResult.swift */; };
 		AC5AB3BA273AA80A0036F326 /* LocationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AB3B9273AA80A0036F326 /* LocationsModel.swift */; };
+		AC5AB3BD273ABB340036F326 /* EpisodeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AB3BC273ABB340036F326 /* EpisodeInfo.swift */; };
+		AC5AB3BF273ABB480036F326 /* EpisodeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AB3BE273ABB480036F326 /* EpisodeResult.swift */; };
+		AC5AB3C4273ABD0B0036F326 /* EpisodesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AB3C3273ABD0B0036F326 /* EpisodesModel.swift */; };
+		AC5AB3C8273AC8EE0036F326 /* EpisodesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AB3C7273AC8EE0036F326 /* EpisodesTableViewCell.swift */; };
 		AC6553762736B51800894309 /* AFErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6553752736B51800894309 /* AFErrorHandler.swift */; };
 		AC65537B2738009500894309 /* CustomPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC65537A2738009500894309 /* CustomPageViewController.storyboard */; };
 		AC65537D273800B000894309 /* DataViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC65537C273800B000894309 /* DataViewController.storyboard */; };
@@ -108,14 +112,18 @@
 		AC2A4022272B16EC001268AD /* LocationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsTableViewController.swift; sourceTree = "<group>"; };
 		AC2A4024272B1722001268AD /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		AC2A4026272B174A001268AD /* StatisticsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatisticsViewController.storyboard; sourceTree = "<group>"; };
-		AC2A4028272B1764001268AD /* EpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewController.swift; sourceTree = "<group>"; };
-		AC2A402A272B1770001268AD /* EpisodesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EpisodesViewController.storyboard; sourceTree = "<group>"; };
+		AC2A4028272B1764001268AD /* EpisodesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTableViewController.swift; sourceTree = "<group>"; };
+		AC2A402A272B1770001268AD /* EpisodesTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EpisodesTableViewController.storyboard; sourceTree = "<group>"; };
 		AC2A402D272B1BAA001268AD /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		AC2A402F272B1BC8001268AD /* FavoritesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoritesViewController.storyboard; sourceTree = "<group>"; };
 		AC5AB3B2273AA3F10036F326 /* LocationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsTableViewCell.swift; sourceTree = "<group>"; };
 		AC5AB3B5273AA72C0036F326 /* LocationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfo.swift; sourceTree = "<group>"; };
 		AC5AB3B7273AA7A40036F326 /* LocationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationResult.swift; sourceTree = "<group>"; };
 		AC5AB3B9273AA80A0036F326 /* LocationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsModel.swift; sourceTree = "<group>"; };
+		AC5AB3BC273ABB340036F326 /* EpisodeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeInfo.swift; sourceTree = "<group>"; };
+		AC5AB3BE273ABB480036F326 /* EpisodeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeResult.swift; sourceTree = "<group>"; };
+		AC5AB3C3273ABD0B0036F326 /* EpisodesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesModel.swift; sourceTree = "<group>"; };
+		AC5AB3C7273AC8EE0036F326 /* EpisodesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTableViewCell.swift; sourceTree = "<group>"; };
 		AC6553752736B51800894309 /* AFErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFErrorHandler.swift; sourceTree = "<group>"; };
 		AC65537A2738009500894309 /* CustomPageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomPageViewController.storyboard; sourceTree = "<group>"; };
 		AC65537C273800B000894309 /* DataViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DataViewController.storyboard; sourceTree = "<group>"; };
@@ -334,8 +342,9 @@
 		AC13A3DA27341B0500898E99 /* RickandMortyAPI */ = {
 			isa = PBXGroup;
 			children = (
-				AC13A3EE27343DB400898E99 /* CharactersModel.swift */,
-				AC5AB3B9273AA80A0036F326 /* LocationsModel.swift */,
+				AC5AB3C0273ABC5A0036F326 /* CharactersModel */,
+				AC5AB3C2273ABC7C0036F326 /* LocationsModel */,
+				AC5AB3C1273ABC690036F326 /* EpisodesModel */,
 			);
 			path = RickandMortyAPI;
 			sourceTree = "<group>";
@@ -401,8 +410,8 @@
 		AC2A401F272B158D001268AD /* Episodes */ = {
 			isa = PBXGroup;
 			children = (
-				AC2A4028272B1764001268AD /* EpisodesViewController.swift */,
-				AC2A402A272B1770001268AD /* EpisodesViewController.storyboard */,
+				AC5AB3C5273AC8850036F326 /* EpisodesList */,
+				AC5AB3C6273AC8920036F326 /* EpisodesCard */,
 			);
 			path = Episodes;
 			sourceTree = "<group>";
@@ -445,8 +454,51 @@
 		AC5AB3BB273ABA7B0036F326 /* Episodes */ = {
 			isa = PBXGroup;
 			children = (
+				AC5AB3BC273ABB340036F326 /* EpisodeInfo.swift */,
+				AC5AB3BE273ABB480036F326 /* EpisodeResult.swift */,
 			);
 			path = Episodes;
+			sourceTree = "<group>";
+		};
+		AC5AB3C0273ABC5A0036F326 /* CharactersModel */ = {
+			isa = PBXGroup;
+			children = (
+				AC13A3EE27343DB400898E99 /* CharactersModel.swift */,
+			);
+			path = CharactersModel;
+			sourceTree = "<group>";
+		};
+		AC5AB3C1273ABC690036F326 /* EpisodesModel */ = {
+			isa = PBXGroup;
+			children = (
+				AC5AB3C3273ABD0B0036F326 /* EpisodesModel.swift */,
+			);
+			path = EpisodesModel;
+			sourceTree = "<group>";
+		};
+		AC5AB3C2273ABC7C0036F326 /* LocationsModel */ = {
+			isa = PBXGroup;
+			children = (
+				AC5AB3B9273AA80A0036F326 /* LocationsModel.swift */,
+			);
+			path = LocationsModel;
+			sourceTree = "<group>";
+		};
+		AC5AB3C5273AC8850036F326 /* EpisodesList */ = {
+			isa = PBXGroup;
+			children = (
+				AC2A4028272B1764001268AD /* EpisodesTableViewController.swift */,
+				AC5AB3C7273AC8EE0036F326 /* EpisodesTableViewCell.swift */,
+				AC2A402A272B1770001268AD /* EpisodesTableViewController.storyboard */,
+			);
+			path = EpisodesList;
+			sourceTree = "<group>";
+		};
+		AC5AB3C6273AC8920036F326 /* EpisodesCard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EpisodesCard;
 			sourceTree = "<group>";
 		};
 		AC6553772738001100894309 /* WelcomeView */ = {
@@ -591,7 +643,7 @@
 				AC2A4017272B0CAB001268AD /* CustomTabBarViewController.storyboard in Resources */,
 				AC2A4027272B174A001268AD /* StatisticsViewController.storyboard in Resources */,
 				AC65537D273800B000894309 /* DataViewController.storyboard in Resources */,
-				AC2A402B272B1770001268AD /* EpisodesViewController.storyboard in Resources */,
+				AC2A402B272B1770001268AD /* EpisodesTableViewController.storyboard in Resources */,
 				AC061E942714B55A001819DF /* About.json in Resources */,
 				AC061EB3271F0CB0001819DF /* AuthViewController.storyboard in Resources */,
 				ACFCCFA426E0F53E00D9A7DF /* Assets.xcassets in Resources */,
@@ -670,13 +722,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC5AB3BF273ABB480036F326 /* EpisodeResult.swift in Sources */,
 				AC061EBA27207A3C001819DF /* UserModel.swift in Sources */,
 				AC061EAD271F08DC001819DF /* StoryboardCreatable.swift in Sources */,
 				AC061EA02715F3DD001819DF /* UITextViewExtension.swift in Sources */,
 				AC061EB7271F0CE6001819DF /* CharactersTableViewController.swift in Sources */,
 				AC13A3E027341E8F00898E99 /* CharacterResult.swift in Sources */,
+				AC5AB3BD273ABB340036F326 /* EpisodeInfo.swift in Sources */,
 				ACEC691A26E5471300A0F25E /* DataViewController.swift in Sources */,
 				AC5AB3B6273AA72C0036F326 /* LocationInfo.swift in Sources */,
+				AC5AB3C4273ABD0B0036F326 /* EpisodesModel.swift in Sources */,
 				AC6553762736B51800894309 /* AFErrorHandler.swift in Sources */,
 				AC061EB1271F0C31001819DF /* AuthViewController.swift in Sources */,
 				AC13A3EB27343D3F00898E99 /* ClientServiceAPIProtocol.swift in Sources */,
@@ -704,7 +759,8 @@
 				AC2A4023272B16EC001268AD /* LocationsTableViewController.swift in Sources */,
 				ACFCCF9F26E0F53A00D9A7DF /* WelcomeViewController.swift in Sources */,
 				AC13A3E327341EF900898E99 /* CharacterOrigin.swift in Sources */,
-				AC2A4029272B1764001268AD /* EpisodesViewController.swift in Sources */,
+				AC5AB3C8273AC8EE0036F326 /* EpisodesTableViewCell.swift in Sources */,
+				AC2A4029272B1764001268AD /* EpisodesTableViewController.swift in Sources */,
 				ACC84196273048080028DA03 /* TabBarImageNameKeys.swift in Sources */,
 				AC5AB3B3273AA3F10036F326 /* LocationsTableViewCell.swift in Sources */,
 				AC13A3EF27343DB400898E99 /* CharactersModel.swift in Sources */,

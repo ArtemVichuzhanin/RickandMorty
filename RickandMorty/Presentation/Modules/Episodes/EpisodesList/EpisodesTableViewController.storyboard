@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lZP-TH-pZC">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Episodes-->
+        <scene sceneID="bv3-LI-00L">
+            <objects>
+                <tableViewController modalPresentationStyle="fullScreen" id="2ZD-Aw-Osb" customClass="EpisodesTableViewController" customModule="RickandMorty" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="zIk-E3-1hW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="EpisodesCell" rowHeight="60" id="jgA-Iw-jwt" customClass="EpisodesTableViewCell" customModule="RickandMorty" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jgA-Iw-jwt" id="kII-oO-75I">
+                                    <rect key="frame" x="0.0" y="0.0" width="384.5" height="60"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNe-9U-xWC">
+                                            <rect key="frame" x="330.5" y="19" width="24" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="K5i-Em-3mx"/>
+                                                <constraint firstAttribute="width" constant="24" id="nKL-9t-PjN"/>
+                                            </constraints>
+                                            <color key="tintColor" systemColor="systemGrayColor"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system">
+                                                <color key="baseForegroundColor" systemColor="systemGrayColor"/>
+                                            </buttonConfiguration>
+                                            <connections>
+                                                <action selector="onHeartTapped:" destination="jgA-Iw-jwt" eventType="touchUpInside" id="hgO-13-gBk"/>
+                                            </connections>
+                                        </button>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="lqG-hK-LP6">
+                                            <rect key="frame" x="182.5" y="20" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsz-bX-ktj">
+                                            <rect key="frame" x="15" y="9" width="305.5" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kV-zM-zr7">
+                                            <rect key="frame" x="15" y="51" width="305.5" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" systemColor="systemGrayColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="fsz-bX-ktj" firstAttribute="leading" secondItem="kII-oO-75I" secondAttribute="leading" constant="15" id="1Ql-jG-nEt"/>
+                                        <constraint firstItem="wNe-9U-xWC" firstAttribute="leading" secondItem="9kV-zM-zr7" secondAttribute="trailing" constant="10" id="4TT-H5-SQS"/>
+                                        <constraint firstAttribute="bottom" secondItem="9kV-zM-zr7" secondAttribute="bottom" constant="9" id="7Ei-xy-Yus"/>
+                                        <constraint firstAttribute="trailing" secondItem="wNe-9U-xWC" secondAttribute="trailing" constant="30" id="8Th-AA-gEd"/>
+                                        <constraint firstItem="fsz-bX-ktj" firstAttribute="top" secondItem="kII-oO-75I" secondAttribute="top" constant="9" id="GYz-Cu-lst"/>
+                                        <constraint firstItem="9kV-zM-zr7" firstAttribute="leading" secondItem="kII-oO-75I" secondAttribute="leading" constant="15" id="bWB-Tx-bz8"/>
+                                        <constraint firstItem="lqG-hK-LP6" firstAttribute="centerY" secondItem="kII-oO-75I" secondAttribute="centerY" id="gCc-5M-FED"/>
+                                        <constraint firstItem="wNe-9U-xWC" firstAttribute="centerY" secondItem="kII-oO-75I" secondAttribute="centerY" id="tvw-qi-6ca"/>
+                                        <constraint firstItem="lqG-hK-LP6" firstAttribute="centerX" secondItem="kII-oO-75I" secondAttribute="centerX" id="y4d-Cu-yiI"/>
+                                        <constraint firstItem="wNe-9U-xWC" firstAttribute="leading" secondItem="fsz-bX-ktj" secondAttribute="trailing" constant="10" id="zr3-Lw-hYv"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="episodeCode" destination="9kV-zM-zr7" id="cd6-VW-87b"/>
+                                    <outlet property="episodeName" destination="fsz-bX-ktj" id="30G-t9-Yn9"/>
+                                    <outlet property="heartButton" destination="wNe-9U-xWC" id="XLr-fR-4rr"/>
+                                    <outlet property="loadingIndicator" destination="lqG-hK-LP6" id="1XG-MH-Sn2"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2ZD-Aw-Osb" id="Bfd-ns-r6f"/>
+                            <outlet property="delegate" destination="2ZD-Aw-Osb" id="i8X-BR-Igd"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" tag="4" title="Episodes" image="episodes" selectedImage="episodesSelected" id="OWe-nR-S5w"/>
+                    <navigationItem key="navigationItem" title="Episodes" id="eDN-zI-FiR"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3VS-WV-0eg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="332" y="77"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Q7H-oq-PXq">
+            <objects>
+                <navigationController modalPresentationStyle="fullScreen" id="lZP-TH-pZC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kNS-6m-tPh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" red="0.0" green="0.69803921570000005" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" red="0.0" green="0.69803921570000005" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2ZD-Aw-Osb" kind="relationship" relationship="rootViewController" id="jEA-Jn-cQo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9fd-g1-J8C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-558" y="77"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="episodes" width="23" height="13"/>
+        <image name="episodesSelected" width="23" height="13"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

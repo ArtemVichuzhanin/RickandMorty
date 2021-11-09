@@ -17,6 +17,11 @@ class ClientServiceAPI: ClientServiceAPIDelegate {
     let locations = LocationsModel()
     return locations
   }
+
+  public func episodes() -> EpisodesModel {
+    let episodes = EpisodesModel()
+    return episodes
+  }
 }
 
 extension ClientServiceAPI: NSCopying {

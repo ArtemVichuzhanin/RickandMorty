@@ -11,7 +11,7 @@
         <scene sceneID="9TI-NP-aTB">
             <objects>
                 <tableViewController modalPresentationStyle="fullScreen" id="QYp-l2-Qd6" customClass="LocationsTableViewController" customModule="RickandMorty" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="1II-sF-lv1">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="1II-sF-lv1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -40,10 +40,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLe-04-9v0">
-                                            <rect key="frame" x="15" y="19" width="305.5" height="22"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="22" id="7gv-Sa-xEP"/>
-                                            </constraints>
+                                            <rect key="frame" x="15" y="30" width="305.5" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -57,9 +54,7 @@
                                         <constraint firstItem="cLe-04-9v0" firstAttribute="leading" secondItem="Lxa-o3-gRy" secondAttribute="leading" constant="15" id="C3K-E0-EAv"/>
                                         <constraint firstAttribute="trailing" secondItem="SAA-au-HRG" secondAttribute="trailing" constant="30" id="Evj-tw-fV9"/>
                                         <constraint firstItem="cLe-04-9v0" firstAttribute="centerY" secondItem="Lxa-o3-gRy" secondAttribute="centerY" id="IrE-GR-P94"/>
-                                        <constraint firstAttribute="bottom" secondItem="cLe-04-9v0" secondAttribute="bottom" constant="19" id="c9u-82-dGh"/>
                                         <constraint firstItem="SAA-au-HRG" firstAttribute="centerY" secondItem="Lxa-o3-gRy" secondAttribute="centerY" id="cO2-r3-HU4"/>
-                                        <constraint firstItem="cLe-04-9v0" firstAttribute="top" secondItem="Lxa-o3-gRy" secondAttribute="top" constant="19" id="hGf-ef-KtV"/>
                                         <constraint firstItem="dN5-cu-AH2" firstAttribute="centerY" secondItem="Lxa-o3-gRy" secondAttribute="centerY" id="uvf-RQ-vdK"/>
                                         <constraint firstItem="dN5-cu-AH2" firstAttribute="centerX" secondItem="Lxa-o3-gRy" secondAttribute="centerX" id="xGg-zL-i2d"/>
                                     </constraints>
