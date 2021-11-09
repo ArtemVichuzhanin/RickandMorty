@@ -43,11 +43,6 @@ class CharactersTableViewController: UITableViewController, StoryboardCreatable 
     showLoadingIndicator()
   }
 
-  override func viewDidDisappear(_ animated: Bool) {
-    super.viewDidDisappear(animated)
-    self.cancelRequestAPI()
-  }
-
   private func setupView() {
     let navigationBar = self.navigationController?.navigationBar
 
@@ -195,10 +190,6 @@ class CharactersTableViewController: UITableViewController, StoryboardCreatable 
         self?.requestAPI(pageNumber: currentPage)
       }
     }
-  }
-
-  private func cancelRequestAPI() {
-    self.clientAPI?.characters().cancelRequest()
   }
 }
 

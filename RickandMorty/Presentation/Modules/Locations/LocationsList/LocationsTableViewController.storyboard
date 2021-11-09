@@ -17,7 +17,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="60" id="C6F-BT-eSN">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="60" id="C6F-BT-eSN" customClass="LocationsTableViewCell" customModule="RickandMorty" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C6F-BT-eSN" id="Lxa-o3-gRy">
@@ -35,9 +35,15 @@
                                             <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system">
                                                 <color key="baseForegroundColor" systemColor="systemGrayColor"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="onHeartTapped:" destination="C6F-BT-eSN" eventType="touchUpInside" id="eHz-S3-9eD"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLe-04-9v0">
-                                            <rect key="frame" x="15" y="30" width="0.0" height="0.0"/>
+                                            <rect key="frame" x="15" y="19" width="305.5" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="7gv-Sa-xEP"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -47,14 +53,22 @@
                                         </activityIndicatorView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="SAA-au-HRG" firstAttribute="leading" secondItem="cLe-04-9v0" secondAttribute="trailing" constant="10" id="7Nz-1f-3qS"/>
                                         <constraint firstItem="cLe-04-9v0" firstAttribute="leading" secondItem="Lxa-o3-gRy" secondAttribute="leading" constant="15" id="C3K-E0-EAv"/>
                                         <constraint firstAttribute="trailing" secondItem="SAA-au-HRG" secondAttribute="trailing" constant="30" id="Evj-tw-fV9"/>
                                         <constraint firstItem="cLe-04-9v0" firstAttribute="centerY" secondItem="Lxa-o3-gRy" secondAttribute="centerY" id="IrE-GR-P94"/>
+                                        <constraint firstAttribute="bottom" secondItem="cLe-04-9v0" secondAttribute="bottom" constant="19" id="c9u-82-dGh"/>
                                         <constraint firstItem="SAA-au-HRG" firstAttribute="centerY" secondItem="Lxa-o3-gRy" secondAttribute="centerY" id="cO2-r3-HU4"/>
+                                        <constraint firstItem="cLe-04-9v0" firstAttribute="top" secondItem="Lxa-o3-gRy" secondAttribute="top" constant="19" id="hGf-ef-KtV"/>
                                         <constraint firstItem="dN5-cu-AH2" firstAttribute="centerY" secondItem="Lxa-o3-gRy" secondAttribute="centerY" id="uvf-RQ-vdK"/>
                                         <constraint firstItem="dN5-cu-AH2" firstAttribute="centerX" secondItem="Lxa-o3-gRy" secondAttribute="centerX" id="xGg-zL-i2d"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="heartButton" destination="SAA-au-HRG" id="zIC-DI-ypO"/>
+                                    <outlet property="loadingIndicator" destination="dN5-cu-AH2" id="nV2-Db-ymo"/>
+                                    <outlet property="locationName" destination="cLe-04-9v0" id="Rms-7J-Jtv"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

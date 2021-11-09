@@ -2,13 +2,9 @@ import Foundation
 import Alamofire
 
 public struct CharactersModel {
-  private var baseURL: String = "https://rickandmortyapi.com/api/"
+  private var baseURL: String = "https://rickandmortyapi.com/api"
   private let sessionManager = Alamofire.Session.default
   private var request: DataRequest?
-
-  private var inProgress: Bool {
-    return !(request?.isCancelled ?? false)
-  }
 
   func getCharactersByPageNumber(pageNumber: Int, completion: @escaping (Result<CharacterInfo, AFError>) -> Void) {
     guard let url = URL(string: "\(baseURL)/character?page=\(String(pageNumber))") else {
@@ -51,9 +47,5 @@ public struct CharactersModel {
           completion(.failure(error))
         }
       }
-  }
-
-  func cancelRequest() {
-    sessionManager.cancelAllRequests()
   }
 }

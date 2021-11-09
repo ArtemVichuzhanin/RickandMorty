@@ -12,6 +12,11 @@ class ClientServiceAPI: ClientServiceAPIDelegate {
     let characters = CharactersModel()
     return characters
   }
+
+  public func locations() -> LocationsModel {
+    let locations = LocationsModel()
+    return locations
+  }
 }
 
 extension ClientServiceAPI: NSCopying {
