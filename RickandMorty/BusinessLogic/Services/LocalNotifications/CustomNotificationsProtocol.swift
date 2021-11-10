@@ -1,6 +1,7 @@
 import Foundation
 
 protocol CustomNotificationsDelegate: AnyObject {
-  func requestAuth() -> Bool
+  func requestAuth()
   func sendNotification(with delay: Double)
+  func resetBadgeCount()
 }

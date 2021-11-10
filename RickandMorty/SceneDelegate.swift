@@ -35,6 +35,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   }
 
   func sceneWillEnterForeground(_ scene: UIScene) {
+    customNotifications.resetBadgeCount()
   }
 
   func sceneDidEnterBackground(_ scene: UIScene) {

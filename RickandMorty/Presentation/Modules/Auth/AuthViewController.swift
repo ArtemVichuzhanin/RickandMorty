@@ -10,13 +10,6 @@ class AuthViewController: UIViewController, StoryboardCreatable {
   @IBOutlet weak var loginButton: UIButton!
   @IBOutlet weak var secureButton: UIButton!
   @IBOutlet weak var launchImage: UIImageView!
-  
-  private var windowInterfaceOrientation: UIInterfaceOrientation? {
-    return UIApplication.shared.connectedScenes
-      .filter { $0.activationState == .foregroundActive }
-      .first { $0 is UIWindowScene }
-      .flatMap { $0 as? UIWindowScene }?.interfaceOrientation
-  }
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
@@ -60,11 +53,16 @@ class AuthViewController: UIViewController, StoryboardCreatable {
     self.launchImage.alpha = 0
   }
 
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    self.view.endEditing(true)
+    super.touchesBegan(touches, with: event)
+  }
+
   @objc func keyboardWillAppear(sender: NSNotification) {
     guard let currentTextField = self.activeTextField else { return }
 
     if let keyboardSize = (sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-      if currentTextField.frame.origin.y > keyboardSize.origin.y {
+      if (currentTextField.frame.origin.y + currentTextField.frame.height) > keyboardSize.origin.y {
         self.view.frame.origin.y = keyboardSize.origin.y - currentTextField.center.y - 20
       }
     }
@@ -98,15 +96,7 @@ class AuthViewController: UIViewController, StoryboardCreatable {
   override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
     super.willTransition(to: newCollection, with: coordinator)
 
-    coordinator.animate(alongsideTransition: nil) {_ in
-      guard let windowInterfaceOrientation = self.windowInterfaceOrientation else { return }
-
-      if windowInterfaceOrientation.isLandscape {
-        self.reDrawBottomBorder()
-      } else {
-        self.reDrawBottomBorder()
-      }
-    }
+    self.reDrawBottomBorder()
   }
 
   private func reDrawBottomBorder() {

@@ -3,10 +3,7 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    guard CustomNotifications.shared.requestAuth() else {
-      print("denied")
-      return true
-    }
+    CustomNotifications.shared.requestAuth()
     return true
   }
 

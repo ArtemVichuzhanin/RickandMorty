@@ -9,15 +9,14 @@ class CustomNotifications: NSObject, CustomNotificationsDelegate {
   }()
 
   let notificationCenter = UNUserNotificationCenter.current()
+  var currentBadgeCount = 0
 
-  var badgeCount: Int {
+  private var badgeCount: Int {
     get {
-      return UIApplication.shared.applicationIconBadgeNumber
+      return getBadge()
     }
     set {
-      DispatchQueue.main.sync {
-        UIApplication.shared.applicationIconBadgeNumber = newValue
-      }
+      setBadge(newValue)
     }
   }
 
@@ -26,37 +25,40 @@ class CustomNotifications: NSObject, CustomNotificationsDelegate {
     notificationCenter.delegate = self
   }
 
-  func requestAuth() -> Bool {
-    var accept = false
+  func setBadge(_ newValue: Int) {
+    DispatchQueue.main.async {
+      UIApplication.shared.applicationIconBadgeNumber = newValue
+    }
+  }
 
-    notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
-      accept = granted
+  func getBadge() -> Int {
+    DispatchQueue.main.async {
+      self.currentBadgeCount = UIApplication.shared.applicationIconBadgeNumber
+    }
+    return currentBadgeCount
+  }
+
+  func resetBadgeCount() {
+    self.setBadge(0)
+  }
+
+  func requestAuth() {
+    notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { _, error in
       print(error?.localizedDescription ?? "")
     }
-    return accept
   }
 
   func sendNotification(with delay: Double) {
-    self.notificationCenter.getNotificationSettings { settings in
-      if settings.authorizationStatus == .authorized {
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: delay, repeats: false)
+    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: delay, repeats: false)
 
-        let requestNotification = UNNotificationRequest(
-          identifier: "Rick and Morty",
-          content: self.configureContent(),
-          trigger: trigger
-        )
+    let requestNotification = UNNotificationRequest(
+      identifier: "Rick and Morty",
+      content: self.configureContent(),
+      trigger: trigger
+    )
 
-        self.notificationCenter.add(requestNotification) { error in
-          print(error?.localizedDescription ?? "")
-        }
-      } else {
-        guard self.requestAuth() else {
-          print("request to send notifications denied")
-          return
-        }
-        self.sendNotification(with: delay)
-      }
+    self.notificationCenter.add(requestNotification) { error in
+      print(error?.localizedDescription ?? "")
     }
   }
 
