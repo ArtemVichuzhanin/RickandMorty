@@ -2,8 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZSM-aW-qyd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -47,12 +47,63 @@
                     <view key="view" contentMode="scaleToFill" id="th6-rD-UE8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ao-17-yeU">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <color key="backgroundColor" name="InterfaceColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="VOb-mF-eZM"/>
+                                </constraints>
+                                <color key="barTintColor" name="InterfaceColor"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem id="euf-ly-gcx">
+                                        <nil key="title"/>
+                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="g3t-ER-N4T">
+                                            <rect key="frame" x="12" y="5.5" width="390" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <segments>
+                                                <segment title="In App Time"/>
+                                                <segment title="Map"/>
+                                            </segments>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="selectedSegmentTintColor" name="AccentColor"/>
+                                            <connections>
+                                                <action selector="switchViewAction:" destination="Jbs-JH-t0a" eventType="valueChanged" id="bbp-co-Wt1"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WJO-U0-g9u">
+                                <rect key="frame" x="0.0" y="132" width="414" height="764"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="EKr-0W-f1G"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WJO-U0-g9u" firstAttribute="leading" secondItem="EKr-0W-f1G" secondAttribute="leading" id="MdO-uc-flD"/>
+                            <constraint firstItem="EKr-0W-f1G" firstAttribute="trailing" secondItem="WJO-U0-g9u" secondAttribute="trailing" id="Ung-Vf-fvf"/>
+                            <constraint firstItem="WJO-U0-g9u" firstAttribute="top" secondItem="5ao-17-yeU" secondAttribute="bottom" id="Xxx-3P-HrT"/>
+                            <constraint firstItem="5ao-17-yeU" firstAttribute="top" secondItem="EKr-0W-f1G" secondAttribute="top" id="c0o-WS-pCh"/>
+                            <constraint firstAttribute="bottom" secondItem="WJO-U0-g9u" secondAttribute="bottom" id="jdW-cN-T3l"/>
+                            <constraint firstItem="5ao-17-yeU" firstAttribute="leading" secondItem="EKr-0W-f1G" secondAttribute="leading" id="jhm-6h-Y4C"/>
+                            <constraint firstItem="5ao-17-yeU" firstAttribute="trailing" secondItem="EKr-0W-f1G" secondAttribute="trailing" id="ngR-cp-XvC"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="3" title="Statistics" image="statistics" selectedImage="statisticsSelected" id="Ltr-8j-bOl"/>
                     <navigationItem key="navigationItem" title="Statistics" id="Ovk-Em-kh3"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="viewContainer" destination="WJO-U0-g9u" id="HOi-ry-0Iw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asb-gl-aiJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -62,6 +113,12 @@
     <resources>
         <image name="statistics" width="23" height="23"/>
         <image name="statisticsSelected" width="23" height="23"/>
+        <namedColor name="AccentColor">
+            <color red="0.99607843137254903" green="0.99607843137254903" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="InterfaceColor">
+            <color red="0.0" green="0.69999998807907104" blue="0.8399999737739563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

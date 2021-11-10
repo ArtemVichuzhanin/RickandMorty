@@ -3,10 +3,7 @@ import UIKit
 import UserNotifications
 
 class CustomNotifications: NSObject, CustomNotificationsDelegate {
-  static var shared: CustomNotifications = {
-    let instance = CustomNotifications()
-    return instance
-  }()
+  static let shared = CustomNotifications()
 
   let notificationCenter = UNUserNotificationCenter.current()
   var currentBadgeCount = 0

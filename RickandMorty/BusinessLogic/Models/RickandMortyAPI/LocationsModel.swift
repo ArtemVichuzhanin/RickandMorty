@@ -1,10 +1,9 @@
 import Foundation
 import Alamofire
 
-public struct LocationsModel {
+public class LocationsModel: LocationsModelDelegate {
   private var baseURL: String = "https://rickandmortyapi.com/api"
   private let sessionManager = Alamofire.Session.default
-  private var request: DataRequest?
 
   func getLocationsByPageNumber(pageNumber: Int, completion: @escaping (Result<LocationInfo, AFError>) -> Void) {
     guard let url = URL(string: "\(baseURL)/location?page=\(String(pageNumber))") else {

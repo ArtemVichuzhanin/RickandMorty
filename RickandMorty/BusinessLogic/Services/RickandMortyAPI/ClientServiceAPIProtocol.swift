@@ -1,7 +1,7 @@
 import Foundation
 
 protocol ClientServiceAPIDelegate: AnyObject {
-  func characters() -> CharactersModel
-  func locations() -> LocationsModel
-  func episodes() -> EpisodesModel
+  func characters() -> CharactersModelDelegate
+  func locations() -> LocationsModelDelegate
+  func episodes() -> EpisodesModelDelegate
 }

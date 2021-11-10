@@ -1,24 +1,32 @@
 PODS:
   - Alamofire (5.4.4)
+  - GoogleMaps (5.2.0):
+    - GoogleMaps/Maps (= 5.2.0)
+  - GoogleMaps/Base (5.2.0)
+  - GoogleMaps/Maps (5.2.0):
+    - GoogleMaps/Base
   - Kingfisher (7.1.1)
   - SwiftLint (0.43.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.4)
+  - GoogleMaps (= 5.2.0)
   - Kingfisher (~> 7.0)
   - SwiftLint
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - GoogleMaps
     - Kingfisher
     - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  GoogleMaps: 025272d5876d3b32604e5c080dc25eaf68764693
   Kingfisher: f738f9c4a3415823b8e2985d10aa2d6a9f37bc4d
   SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
 
-PODFILE CHECKSUM: 4ae3bad0aa3a6070f7886f8c23ae535c5a2a5e13
+PODFILE CHECKSUM: 98d9429239dc5e077c5da506baf08338c0178f2f
 
 COCOAPODS: 1.10.2

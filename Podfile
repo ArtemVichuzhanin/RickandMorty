@@ -9,4 +9,5 @@ target 'RickandMorty' do
   pod 'SwiftLint'
   pod 'Kingfisher', '~> 7.0'
   pod 'Alamofire', '~> 5.4'
+  pod 'GoogleMaps', '5.2.0'
 end

@@ -1,10 +1,9 @@
 import Foundation
 import Alamofire
 
-public struct CharactersModel {
+public class CharactersModel: CharactersModelDelegate {
   private var baseURL: String = "https://rickandmortyapi.com/api"
   private let sessionManager = Alamofire.Session.default
-  private var request: DataRequest?
 
   func getCharactersByPageNumber(pageNumber: Int, completion: @escaping (Result<CharacterInfo, AFError>) -> Void) {
     guard let url = URL(string: "\(baseURL)/character?page=\(String(pageNumber))") else {

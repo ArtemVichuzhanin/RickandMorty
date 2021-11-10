@@ -1,24 +1,21 @@
 import Foundation
 
 class ClientServiceAPI: ClientServiceAPIDelegate {
-  static var shared: ClientServiceAPI = {
-    let instance = ClientServiceAPI()
-    return instance
-  }()
+  static let shared = ClientServiceAPI()
 
   private init() {}
 
-  public func characters() -> CharactersModel {
+  public func characters() -> CharactersModelDelegate {
     let characters = CharactersModel()
     return characters
   }
 
-  public func locations() -> LocationsModel {
+  public func locations() -> LocationsModelDelegate {
     let locations = LocationsModel()
     return locations
   }
 
-  public func episodes() -> EpisodesModel {
+  public func episodes() -> EpisodesModelDelegate {
     let episodes = EpisodesModel()
     return episodes
   }

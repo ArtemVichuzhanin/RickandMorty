@@ -58,12 +58,22 @@
 		AC5AB3C8273AC8EE0036F326 /* EpisodesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AB3C7273AC8EE0036F326 /* EpisodesTableViewCell.swift */; };
 		AC5AB3CB273ADAD00036F326 /* CustomNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AB3CA273ADAD00036F326 /* CustomNotifications.swift */; };
 		AC5AB3CD273ADBDD0036F326 /* CustomNotificationsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AB3CC273ADBDD0036F326 /* CustomNotificationsProtocol.swift */; };
+		AC5AB3D1273BACCF0036F326 /* GoogleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AB3D0273BACCE0036F326 /* GoogleMapViewController.swift */; };
+		AC5AB3D3273BACDE0036F326 /* GoogleMapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC5AB3D2273BACDE0036F326 /* GoogleMapViewController.storyboard */; };
+		AC5AB3D5273BAD640036F326 /* InAppTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AB3D4273BAD640036F326 /* InAppTimeViewController.swift */; };
+		AC5AB3D7273BAD800036F326 /* InAppTimeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC5AB3D6273BAD800036F326 /* InAppTimeViewController.storyboard */; };
+		AC5AB3D9273BB5CB0036F326 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AB3D8273BB5CB0036F326 /* UINavigationControllerExtension.swift */; };
+		AC5AB3DC273BE6B00036F326 /* RickAndMortyCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC5AB3DA273BE6AF0036F326 /* RickAndMortyCoreDataModel.xcdatamodeld */; };
+		AC5AB3DF273BF6760036F326 /* AppLaunchLocationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AB3DE273BF6750036F326 /* AppLaunchLocationsModel.swift */; };
+		AC5AB3E2273BFABB0036F326 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AB3E1273BFABB0036F326 /* AppData.swift */; };
+		AC5AB3E4273BFADB0036F326 /* AppDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AB3E3273BFADB0036F326 /* AppDataProtocol.swift */; };
 		AC6553762736B51800894309 /* AFErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6553752736B51800894309 /* AFErrorHandler.swift */; };
 		AC65537B2738009500894309 /* CustomPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC65537A2738009500894309 /* CustomPageViewController.storyboard */; };
 		AC65537D273800B000894309 /* DataViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC65537C273800B000894309 /* DataViewController.storyboard */; };
 		ACC84196273048080028DA03 /* TabBarImageNameKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC84195273048080028DA03 /* TabBarImageNameKeys.swift */; };
 		ACC84198273101CA0028DA03 /* AppColorKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC84197273101CA0028DA03 /* AppColorKeys.swift */; };
 		ACC8419A273112D10028DA03 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC84199273112D10028DA03 /* CustomTabBar.swift */; };
+		ACD579C8273C201B004A8D2B /* RickandMortyAPIModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD579C7273C201B004A8D2B /* RickandMortyAPIModelProtocol.swift */; };
 		ACEC691A26E5471300A0F25E /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC691926E5471300A0F25E /* DataViewController.swift */; };
 		ACEC691C26E54BB700A0F25E /* CustomPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC691B26E54BB700A0F25E /* CustomPageViewController.swift */; };
 		ACFCCF9B26E0F53A00D9A7DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFCCF9A26E0F53A00D9A7DF /* AppDelegate.swift */; };
@@ -128,12 +138,22 @@
 		AC5AB3C7273AC8EE0036F326 /* EpisodesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTableViewCell.swift; sourceTree = "<group>"; };
 		AC5AB3CA273ADAD00036F326 /* CustomNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNotifications.swift; sourceTree = "<group>"; };
 		AC5AB3CC273ADBDD0036F326 /* CustomNotificationsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNotificationsProtocol.swift; sourceTree = "<group>"; };
+		AC5AB3D0273BACCE0036F326 /* GoogleMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapViewController.swift; sourceTree = "<group>"; };
+		AC5AB3D2273BACDE0036F326 /* GoogleMapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoogleMapViewController.storyboard; sourceTree = "<group>"; };
+		AC5AB3D4273BAD640036F326 /* InAppTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppTimeViewController.swift; sourceTree = "<group>"; };
+		AC5AB3D6273BAD800036F326 /* InAppTimeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InAppTimeViewController.storyboard; sourceTree = "<group>"; };
+		AC5AB3D8273BB5CB0036F326 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
+		AC5AB3DB273BE6B00036F326 /* RickAndMortyCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RickAndMortyCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		AC5AB3DE273BF6750036F326 /* AppLaunchLocationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchLocationsModel.swift; sourceTree = "<group>"; };
+		AC5AB3E1273BFABB0036F326 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		AC5AB3E3273BFADB0036F326 /* AppDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataProtocol.swift; sourceTree = "<group>"; };
 		AC6553752736B51800894309 /* AFErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFErrorHandler.swift; sourceTree = "<group>"; };
 		AC65537A2738009500894309 /* CustomPageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomPageViewController.storyboard; sourceTree = "<group>"; };
 		AC65537C273800B000894309 /* DataViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DataViewController.storyboard; sourceTree = "<group>"; };
 		ACC84195273048080028DA03 /* TabBarImageNameKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarImageNameKeys.swift; sourceTree = "<group>"; };
 		ACC84197273101CA0028DA03 /* AppColorKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorKeys.swift; sourceTree = "<group>"; };
 		ACC84199273112D10028DA03 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		ACD579C7273C201B004A8D2B /* RickandMortyAPIModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RickandMortyAPIModelProtocol.swift; sourceTree = "<group>"; };
 		ACEC691926E5471300A0F25E /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		ACEC691B26E54BB700A0F25E /* CustomPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageViewController.swift; sourceTree = "<group>"; };
 		ACFCCF9726E0F53A00D9A7DF /* RickandMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickandMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				AC13A3DA27341B0500898E99 /* RickandMortyAPI */,
+				AC5AB3DD273BF5F40036F326 /* CoreData */,
 				AC061E9B2715D3BD001819DF /* WelcomeScreenPageModel.swift */,
 				AC061EB927207A3B001819DF /* UserModel.swift */,
 			);
@@ -219,6 +240,7 @@
 			children = (
 				AC061E9F2715F3DD001819DF /* UITextViewExtension.swift */,
 				AC2A40142721C33B001268AD /* UITextFieldExtension.swift */,
+				AC5AB3D8273BB5CB0036F326 /* UINavigationControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -290,6 +312,7 @@
 		AC061EB8271F2AC8001819DF /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AC5AB3E0273BFA820036F326 /* AppData */,
 				AC5AB3C9273ADA670036F326 /* LocalNotifications */,
 				AC13A3E727342B2100898E99 /* RickandMortyAPI */,
 				AC13A3E627342AE700898E99 /* Auth */,
@@ -347,9 +370,10 @@
 		AC13A3DA27341B0500898E99 /* RickandMortyAPI */ = {
 			isa = PBXGroup;
 			children = (
-				AC5AB3C0273ABC5A0036F326 /* CharactersModel */,
-				AC5AB3C2273ABC7C0036F326 /* LocationsModel */,
-				AC5AB3C1273ABC690036F326 /* EpisodesModel */,
+				ACD579C7273C201B004A8D2B /* RickandMortyAPIModelProtocol.swift */,
+				AC13A3EE27343DB400898E99 /* CharactersModel.swift */,
+				AC5AB3B9273AA80A0036F326 /* LocationsModel.swift */,
+				AC5AB3C3273ABD0B0036F326 /* EpisodesModel.swift */,
 			);
 			path = RickandMortyAPI;
 			sourceTree = "<group>";
@@ -408,6 +432,8 @@
 			children = (
 				AC2A4024272B1722001268AD /* StatisticsViewController.swift */,
 				AC2A4026272B174A001268AD /* StatisticsViewController.storyboard */,
+				AC5AB3CF273BAC6B0036F326 /* InAppTime */,
+				AC5AB3CE273BAC5B0036F326 /* Map */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -465,30 +491,6 @@
 			path = Episodes;
 			sourceTree = "<group>";
 		};
-		AC5AB3C0273ABC5A0036F326 /* CharactersModel */ = {
-			isa = PBXGroup;
-			children = (
-				AC13A3EE27343DB400898E99 /* CharactersModel.swift */,
-			);
-			path = CharactersModel;
-			sourceTree = "<group>";
-		};
-		AC5AB3C1273ABC690036F326 /* EpisodesModel */ = {
-			isa = PBXGroup;
-			children = (
-				AC5AB3C3273ABD0B0036F326 /* EpisodesModel.swift */,
-			);
-			path = EpisodesModel;
-			sourceTree = "<group>";
-		};
-		AC5AB3C2273ABC7C0036F326 /* LocationsModel */ = {
-			isa = PBXGroup;
-			children = (
-				AC5AB3B9273AA80A0036F326 /* LocationsModel.swift */,
-			);
-			path = LocationsModel;
-			sourceTree = "<group>";
-		};
 		AC5AB3C5273AC8850036F326 /* EpisodesList */ = {
 			isa = PBXGroup;
 			children = (
@@ -513,6 +515,41 @@
 				AC5AB3CC273ADBDD0036F326 /* CustomNotificationsProtocol.swift */,
 			);
 			path = LocalNotifications;
+			sourceTree = "<group>";
+		};
+		AC5AB3CE273BAC5B0036F326 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				AC5AB3D0273BACCE0036F326 /* GoogleMapViewController.swift */,
+				AC5AB3D2273BACDE0036F326 /* GoogleMapViewController.storyboard */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		AC5AB3CF273BAC6B0036F326 /* InAppTime */ = {
+			isa = PBXGroup;
+			children = (
+				AC5AB3D4273BAD640036F326 /* InAppTimeViewController.swift */,
+				AC5AB3D6273BAD800036F326 /* InAppTimeViewController.storyboard */,
+			);
+			path = InAppTime;
+			sourceTree = "<group>";
+		};
+		AC5AB3DD273BF5F40036F326 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				AC5AB3DE273BF6750036F326 /* AppLaunchLocationsModel.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		AC5AB3E0273BFA820036F326 /* AppData */ = {
+			isa = PBXGroup;
+			children = (
+				AC5AB3E3273BFADB0036F326 /* AppDataProtocol.swift */,
+				AC5AB3E1273BFABB0036F326 /* AppData.swift */,
+			);
+			path = AppData;
 			sourceTree = "<group>";
 		};
 		AC6553772738001100894309 /* WelcomeView */ = {
@@ -589,6 +626,7 @@
 				AC061EA4271B483E001819DF /* Enum */,
 				AC061E952714B738001819DF /* Resources */,
 				ACFCCFA826E0F53E00D9A7DF /* Info.plist */,
+				AC5AB3DA273BE6AF0036F326 /* RickAndMortyCoreDataModel.xcdatamodeld */,
 			);
 			path = RickandMorty;
 			sourceTree = "<group>";
@@ -606,6 +644,7 @@
 				ACFCCF9426E0F53A00D9A7DF /* Frameworks */,
 				ACFCCF9526E0F53A00D9A7DF /* Resources */,
 				945311C4998D5D6AB95FF8CD /* [CP] Embed Pods Frameworks */,
+				9291F37EA01F066C1E082D54 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -653,6 +692,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC5AB3D3273BACDE0036F326 /* GoogleMapViewController.storyboard in Resources */,
 				ACFCCFA726E0F53E00D9A7DF /* LaunchScreen.storyboard in Resources */,
 				AC2A4017272B0CAB001268AD /* CustomTabBarViewController.storyboard in Resources */,
 				AC2A4027272B174A001268AD /* StatisticsViewController.storyboard in Resources */,
@@ -663,6 +703,7 @@
 				ACFCCFA426E0F53E00D9A7DF /* Assets.xcassets in Resources */,
 				AC65537B2738009500894309 /* CustomPageViewController.storyboard in Resources */,
 				AC061EC4272129A4001819DF /* User.json in Resources */,
+				AC5AB3D7273BAD800036F326 /* InAppTimeViewController.storyboard in Resources */,
 				ACFCCFA226E0F53A00D9A7DF /* WelcomeViewController.storyboard in Resources */,
 				AC061EB5271F0CCF001819DF /* CharactersTableViewController.storyboard in Resources */,
 				AC2A4021272B16A5001268AD /* LocationsTableViewController.storyboard in Resources */,
@@ -673,6 +714,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		9291F37EA01F066C1E082D54 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RickandMorty/Pods-RickandMorty-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RickandMorty/Pods-RickandMorty-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RickandMorty/Pods-RickandMorty-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		945311C4998D5D6AB95FF8CD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -737,13 +795,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC5AB3BF273ABB480036F326 /* EpisodeResult.swift in Sources */,
+				ACD579C8273C201B004A8D2B /* RickandMortyAPIModelProtocol.swift in Sources */,
+				AC5AB3DC273BE6B00036F326 /* RickAndMortyCoreDataModel.xcdatamodeld in Sources */,
 				AC061EBA27207A3C001819DF /* UserModel.swift in Sources */,
 				AC061EAD271F08DC001819DF /* StoryboardCreatable.swift in Sources */,
 				AC061EA02715F3DD001819DF /* UITextViewExtension.swift in Sources */,
 				AC061EB7271F0CE6001819DF /* CharactersTableViewController.swift in Sources */,
+				AC5AB3E4273BFADB0036F326 /* AppDataProtocol.swift in Sources */,
 				AC13A3E027341E8F00898E99 /* CharacterResult.swift in Sources */,
+				AC5AB3D5273BAD640036F326 /* InAppTimeViewController.swift in Sources */,
 				AC5AB3BD273ABB340036F326 /* EpisodeInfo.swift in Sources */,
 				ACEC691A26E5471300A0F25E /* DataViewController.swift in Sources */,
+				AC5AB3D9273BB5CB0036F326 /* UINavigationControllerExtension.swift in Sources */,
+				AC5AB3D1273BACCF0036F326 /* GoogleMapViewController.swift in Sources */,
 				AC5AB3B6273AA72C0036F326 /* LocationInfo.swift in Sources */,
 				AC5AB3C4273ABD0B0036F326 /* EpisodesModel.swift in Sources */,
 				AC6553762736B51800894309 /* AFErrorHandler.swift in Sources */,
@@ -759,11 +823,13 @@
 				AC2A402E272B1BAA001268AD /* FavoritesViewController.swift in Sources */,
 				AC13A3D5273415A300898E99 /* Status.swift in Sources */,
 				AC061EC02721282A001819DF /* AuthServiceProtocol.swift in Sources */,
+				AC5AB3E2273BFABB0036F326 /* AppData.swift in Sources */,
 				AC5AB3CB273ADAD00036F326 /* CustomNotifications.swift in Sources */,
 				AC061EBC27207AEE001819DF /* KeychainWrapperProtocol.swift in Sources */,
 				AC13A3E527341F2F00898E99 /* CharacterLocation.swift in Sources */,
 				AC061EBE27207B4E001819DF /* KeychainWrapper.swift in Sources */,
 				AC2A4019272B0D0A001268AD /* CustomTabBarViewController.swift in Sources */,
+				AC5AB3DF273BF6760036F326 /* AppLaunchLocationsModel.swift in Sources */,
 				AC061EA8271B48D4001819DF /* RootViewController.swift in Sources */,
 				AC13A3DC27341C9F00898E99 /* Info.swift in Sources */,
 				AC5AB3B8273AA7A40036F326 /* LocationResult.swift in Sources */,
@@ -991,6 +1057,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AC5AB3DA273BE6AF0036F326 /* RickAndMortyCoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AC5AB3DB273BE6B00036F326 /* RickAndMortyCoreDataModel.xcdatamodel */,
+			);
+			currentVersion = AC5AB3DB273BE6B00036F326 /* RickAndMortyCoreDataModel.xcdatamodel */;
+			path = RickAndMortyCoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = ACFCCF8F26E0F53A00D9A7DF /* Project object */;
 }
