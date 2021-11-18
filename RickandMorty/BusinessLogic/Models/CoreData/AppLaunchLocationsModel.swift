@@ -2,27 +2,37 @@ import UIKit
 import CoreData
 
 struct AppLaunchLocationsModel {
-  func saveLocation(latitude: Double, longitude: Double) {
-    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-    let context = appDelegate.persistentContainer.viewContext
+  lazy var managedContext: NSManagedObjectContext = {
+    if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+      let context = appDelegate.persistentContainer.viewContext
+      return context
+    } else {
+      fatalError("AppDelegate is nil")
+    }
+  }()
 
-    let entity = AppLaunchLocation(context: context)
+  func saveLocation(latitude: Double, longitude: Double) {
+    var mutatableSelf = self
+
+    let entity = AppLaunchLocation(context: mutatableSelf.managedContext)
     entity.latitude = latitude
     entity.longitude = longitude
+
     do {
-      try context.save()
-    } catch let error as NSError {
-      print("Save failed: \(error), \(error.userInfo)")
+      try mutatableSelf.managedContext.save()
+    } catch {
+      mutatableSelf.managedContext.rollback()
+      let nserror = error as NSError
+      fatalError("Save failed unresolved error \(nserror), \(nserror.userInfo)")
     }
   }
 
   func loadLocations(completion: @escaping ([AppLaunchLocation]) -> Void) {
-    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-    let context = appDelegate.persistentContainer.viewContext
+    var mutatableSelf = self
 
     let request = NSFetchRequest<AppLaunchLocation>(entityName: "AppLaunchLocation")
     do {
-      completion(try context.fetch(request))
+      completion(try mutatableSelf.managedContext.fetch(request))
     } catch let error as NSError {
       print("Load failed: \(error), \(error.userInfo)")
     }

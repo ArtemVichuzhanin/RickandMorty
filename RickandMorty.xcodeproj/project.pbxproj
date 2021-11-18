@@ -59,7 +59,6 @@
 		AC5AB3CB273ADAD00036F326 /* CustomNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AB3CA273ADAD00036F326 /* CustomNotifications.swift */; };
 		AC5AB3CD273ADBDD0036F326 /* CustomNotificationsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AB3CC273ADBDD0036F326 /* CustomNotificationsProtocol.swift */; };
 		AC5AB3D1273BACCF0036F326 /* GoogleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AB3D0273BACCE0036F326 /* GoogleMapViewController.swift */; };
-		AC5AB3D3273BACDE0036F326 /* GoogleMapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC5AB3D2273BACDE0036F326 /* GoogleMapViewController.storyboard */; };
 		AC5AB3D5273BAD640036F326 /* InAppTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AB3D4273BAD640036F326 /* InAppTimeViewController.swift */; };
 		AC5AB3D7273BAD800036F326 /* InAppTimeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC5AB3D6273BAD800036F326 /* InAppTimeViewController.storyboard */; };
 		AC5AB3D9273BB5CB0036F326 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AB3D8273BB5CB0036F326 /* UINavigationControllerExtension.swift */; };
@@ -74,6 +73,7 @@
 		ACC84198273101CA0028DA03 /* AppColorKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC84197273101CA0028DA03 /* AppColorKeys.swift */; };
 		ACC8419A273112D10028DA03 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC84199273112D10028DA03 /* CustomTabBar.swift */; };
 		ACD579C8273C201B004A8D2B /* RickandMortyAPIModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD579C7273C201B004A8D2B /* RickandMortyAPIModelProtocol.swift */; };
+		ACD579CB273EB7D9004A8D2B /* TimeInApplicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD579CA273EB7D9004A8D2B /* TimeInApplicationModel.swift */; };
 		ACEC691A26E5471300A0F25E /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC691926E5471300A0F25E /* DataViewController.swift */; };
 		ACEC691C26E54BB700A0F25E /* CustomPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC691B26E54BB700A0F25E /* CustomPageViewController.swift */; };
 		ACFCCF9B26E0F53A00D9A7DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFCCF9A26E0F53A00D9A7DF /* AppDelegate.swift */; };
@@ -139,7 +139,6 @@
 		AC5AB3CA273ADAD00036F326 /* CustomNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNotifications.swift; sourceTree = "<group>"; };
 		AC5AB3CC273ADBDD0036F326 /* CustomNotificationsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNotificationsProtocol.swift; sourceTree = "<group>"; };
 		AC5AB3D0273BACCE0036F326 /* GoogleMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapViewController.swift; sourceTree = "<group>"; };
-		AC5AB3D2273BACDE0036F326 /* GoogleMapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoogleMapViewController.storyboard; sourceTree = "<group>"; };
 		AC5AB3D4273BAD640036F326 /* InAppTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppTimeViewController.swift; sourceTree = "<group>"; };
 		AC5AB3D6273BAD800036F326 /* InAppTimeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InAppTimeViewController.storyboard; sourceTree = "<group>"; };
 		AC5AB3D8273BB5CB0036F326 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
@@ -154,6 +153,7 @@
 		ACC84197273101CA0028DA03 /* AppColorKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorKeys.swift; sourceTree = "<group>"; };
 		ACC84199273112D10028DA03 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		ACD579C7273C201B004A8D2B /* RickandMortyAPIModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RickandMortyAPIModelProtocol.swift; sourceTree = "<group>"; };
+		ACD579CA273EB7D9004A8D2B /* TimeInApplicationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInApplicationModel.swift; sourceTree = "<group>"; };
 		ACEC691926E5471300A0F25E /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		ACEC691B26E54BB700A0F25E /* CustomPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageViewController.swift; sourceTree = "<group>"; };
 		ACFCCF9726E0F53A00D9A7DF /* RickandMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickandMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,6 +238,7 @@
 		AC061E9E2715F290001819DF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				ACD579C9273EA09A004A8D2B /* Protocols */,
 				AC061E9F2715F3DD001819DF /* UITextViewExtension.swift */,
 				AC2A40142721C33B001268AD /* UITextFieldExtension.swift */,
 				AC5AB3D8273BB5CB0036F326 /* UINavigationControllerExtension.swift */,
@@ -370,7 +371,6 @@
 		AC13A3DA27341B0500898E99 /* RickandMortyAPI */ = {
 			isa = PBXGroup;
 			children = (
-				ACD579C7273C201B004A8D2B /* RickandMortyAPIModelProtocol.swift */,
 				AC13A3EE27343DB400898E99 /* CharactersModel.swift */,
 				AC5AB3B9273AA80A0036F326 /* LocationsModel.swift */,
 				AC5AB3C3273ABD0B0036F326 /* EpisodesModel.swift */,
@@ -401,7 +401,6 @@
 		AC13A3E727342B2100898E99 /* RickandMortyAPI */ = {
 			isa = PBXGroup;
 			children = (
-				AC13A3EA27343D3F00898E99 /* ClientServiceAPIProtocol.swift */,
 				AC13A3EC27343D5500898E99 /* ClientServiceAPI.swift */,
 				AC6553752736B51800894309 /* AFErrorHandler.swift */,
 			);
@@ -512,7 +511,6 @@
 			isa = PBXGroup;
 			children = (
 				AC5AB3CA273ADAD00036F326 /* CustomNotifications.swift */,
-				AC5AB3CC273ADBDD0036F326 /* CustomNotificationsProtocol.swift */,
 			);
 			path = LocalNotifications;
 			sourceTree = "<group>";
@@ -521,7 +519,6 @@
 			isa = PBXGroup;
 			children = (
 				AC5AB3D0273BACCE0036F326 /* GoogleMapViewController.swift */,
-				AC5AB3D2273BACDE0036F326 /* GoogleMapViewController.storyboard */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -539,6 +536,7 @@
 			isa = PBXGroup;
 			children = (
 				AC5AB3DE273BF6750036F326 /* AppLaunchLocationsModel.swift */,
+				ACD579CA273EB7D9004A8D2B /* TimeInApplicationModel.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -546,7 +544,6 @@
 		AC5AB3E0273BFA820036F326 /* AppData */ = {
 			isa = PBXGroup;
 			children = (
-				AC5AB3E3273BFADB0036F326 /* AppDataProtocol.swift */,
 				AC5AB3E1273BFABB0036F326 /* AppData.swift */,
 			);
 			path = AppData;
@@ -594,6 +591,17 @@
 				AC061EAB271F087E001819DF /* Modules */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		ACD579C9273EA09A004A8D2B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				AC5AB3E3273BFADB0036F326 /* AppDataProtocol.swift */,
+				AC13A3EA27343D3F00898E99 /* ClientServiceAPIProtocol.swift */,
+				ACD579C7273C201B004A8D2B /* RickandMortyAPIModelProtocol.swift */,
+				AC5AB3CC273ADBDD0036F326 /* CustomNotificationsProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		ACFCCF8E26E0F53A00D9A7DF = {
@@ -692,7 +700,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC5AB3D3273BACDE0036F326 /* GoogleMapViewController.storyboard in Resources */,
 				ACFCCFA726E0F53E00D9A7DF /* LaunchScreen.storyboard in Resources */,
 				AC2A4017272B0CAB001268AD /* CustomTabBarViewController.storyboard in Resources */,
 				AC2A4027272B174A001268AD /* StatisticsViewController.storyboard in Resources */,
@@ -841,6 +848,7 @@
 				AC2A4023272B16EC001268AD /* LocationsTableViewController.swift in Sources */,
 				ACFCCF9F26E0F53A00D9A7DF /* WelcomeViewController.swift in Sources */,
 				AC13A3E327341EF900898E99 /* CharacterOrigin.swift in Sources */,
+				ACD579CB273EB7D9004A8D2B /* TimeInApplicationModel.swift in Sources */,
 				AC5AB3C8273AC8EE0036F326 /* EpisodesTableViewCell.swift in Sources */,
 				AC2A4029272B1764001268AD /* EpisodesTableViewController.swift in Sources */,
 				ACC84196273048080028DA03 /* TabBarImageNameKeys.swift in Sources */,

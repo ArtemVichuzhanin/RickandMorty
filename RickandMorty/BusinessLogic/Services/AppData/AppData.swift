@@ -9,6 +9,11 @@ class AppData: AppDataDelegate {
     let locations = AppLaunchLocationsModel()
     return locations
   }
+
+  public func timeInAppManaged() -> TimeInApplicationModel {
+    let timeInApp = TimeInApplicationModel()
+    return timeInApp
+  }
 }
 
 extension AppData: NSCopying {

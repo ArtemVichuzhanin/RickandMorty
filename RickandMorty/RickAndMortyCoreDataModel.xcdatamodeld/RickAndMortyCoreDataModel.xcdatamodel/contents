@@ -4,7 +4,12 @@
         <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
+    <entity name="InAppTime" representedClassName=".InAppTime" syncable="YES" codeGenerationType="class">
+        <attribute name="launchTime" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="timeInApp" attributeType="Integer 32" minValueString="0" maxValueString="86399" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
     <elements>
         <element name="AppLaunchLocation" positionX="-63" positionY="-18" width="128" height="59"/>
+        <element name="InAppTime" positionX="-63" positionY="0" width="128" height="59"/>
     </elements>
 </model>

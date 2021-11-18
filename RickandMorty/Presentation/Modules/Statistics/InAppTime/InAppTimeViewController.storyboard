@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,9 +16,99 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XPJ-FG-G34">
+                                <rect key="frame" x="152" y="144" width="110" height="345"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Do-E4-gBD">
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="115"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="75"/>
+                                        <color key="textColor" name="InterfaceColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUJ-fc-HDq">
+                                        <rect key="frame" x="0.0" y="115" width="110" height="115"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="75"/>
+                                        <color key="textColor" name="InterfaceColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPc-oR-aNG">
+                                        <rect key="frame" x="0.0" y="230" width="110" height="115"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="75"/>
+                                        <color key="textColor" name="InterfaceColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="345" id="1D9-cI-Ky3"/>
+                                    <constraint firstAttribute="width" constant="110" id="cFb-Rv-YUp"/>
+                                    <constraint firstAttribute="height" constant="110" id="nhb-dR-2sy"/>
+                                    <constraint firstAttribute="height" constant="345" id="qMQ-Ff-YVj"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1D9-cI-Ky3"/>
+                                        <exclude reference="cFb-Rv-YUp"/>
+                                        <exclude reference="nhb-dR-2sy"/>
+                                        <exclude reference="qMQ-Ff-YVj"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" axis="horizontal">
+                                    <mask key="constraints">
+                                        <include reference="1D9-cI-Ky3"/>
+                                        <include reference="nhb-dR-2sy"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" axis="vertical">
+                                    <mask key="constraints">
+                                        <include reference="cFb-Rv-YUp"/>
+                                        <include reference="qMQ-Ff-YVj"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocy-00-2Qm">
+                                <rect key="frame" x="152.5" y="509" width="109.5" height="34.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Reset Time">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
+                                    <color key="baseForegroundColor" name="InterfaceColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onResetTimeTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="alk-qZ-PJ0"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XPJ-FG-G34" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="MRS-BY-cZd"/>
+                            <constraint firstItem="ocy-00-2Qm" firstAttribute="top" secondItem="XPJ-FG-G34" secondAttribute="bottom" constant="20" id="fqm-BR-kz7"/>
+                            <constraint firstItem="ocy-00-2Qm" firstAttribute="top" secondItem="XPJ-FG-G34" secondAttribute="bottom" constant="20" id="oRl-Ih-4i7"/>
+                            <constraint firstItem="XPJ-FG-G34" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="100" id="qRC-Gy-km8"/>
+                            <constraint firstItem="ocy-00-2Qm" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="y9h-Hz-9cJ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="fqm-BR-kz7"/>
+                                <exclude reference="oRl-Ih-4i7"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="oRl-Ih-4i7"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="fqm-BR-kz7"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="hoursLabel" destination="9Do-E4-gBD" id="8Wh-yk-mqd"/>
+                        <outlet property="minutesLabel" destination="lUJ-fc-HDq" id="zz7-dH-EKO"/>
+                        <outlet property="secondsLabel" destination="fPc-oR-aNG" id="7Hv-d5-Qoq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -25,6 +116,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="InterfaceColor">
+            <color red="0.0" green="0.69999998807907104" blue="0.8399999737739563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

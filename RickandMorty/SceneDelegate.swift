@@ -4,6 +4,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   var window: UIWindow?
   var coordinator: AppCoordinatorProtocol?
   let customNotifications = CustomNotifications.shared
+  let timeInAppService = AppData.shared.timeInAppManaged()
 
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -36,9 +37,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
   func sceneWillEnterForeground(_ scene: UIScene) {
     customNotifications.resetBadgeCount()
+
+    timeInAppService.saveLaunchTime()
   }
 
   func sceneDidEnterBackground(_ scene: UIScene) {
     customNotifications.sendNotification(with: 2)
+
+    timeInAppService.saveTimeInApp()
   }
 }
