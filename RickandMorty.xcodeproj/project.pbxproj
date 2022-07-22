@@ -71,7 +71,7 @@
 		ACC84196273048080028DA03 /* TabBarImageNameKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC84195273048080028DA03 /* TabBarImageNameKeys.swift */; };
 		ACC84198273101CA0028DA03 /* AppColorKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC84197273101CA0028DA03 /* AppColorKeys.swift */; };
 		ACC8419A273112D10028DA03 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC84199273112D10028DA03 /* CustomTabBar.swift */; };
-		ACD07FB12884038C0089CB13 /* RickandMortyCommon in Frameworks */ = {isa = PBXBuildFile; productRef = ACD07FB02884038C0089CB13 /* RickandMortyCommon */; };
+		ACD07FB6288B0B2A0089CB13 /* RickandMortyUmbrella in Frameworks */ = {isa = PBXBuildFile; productRef = ACD07FB5288B0B2A0089CB13 /* RickandMortyUmbrella */; };
 		ACD579C8273C201B004A8D2B /* RickandMortyAPIModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD579C7273C201B004A8D2B /* RickandMortyAPIModelProtocol.swift */; };
 		ACD579CB273EB7D9004A8D2B /* TimeInApplicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD579CA273EB7D9004A8D2B /* TimeInApplicationModel.swift */; };
 		ACEC691A26E5471300A0F25E /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC691926E5471300A0F25E /* DataViewController.swift */; };
@@ -149,7 +149,7 @@
 		ACC84195273048080028DA03 /* TabBarImageNameKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarImageNameKeys.swift; sourceTree = "<group>"; };
 		ACC84197273101CA0028DA03 /* AppColorKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorKeys.swift; sourceTree = "<group>"; };
 		ACC84199273112D10028DA03 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
-		ACD07FA82883F11B0089CB13 /* RickandMortyCommon */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RickandMortyCommon; sourceTree = "<group>"; };
+		ACD07FB4288B0B000089CB13 /* Packages */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Packages; sourceTree = "<group>"; };
 		ACD579C7273C201B004A8D2B /* RickandMortyAPIModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RickandMortyAPIModelProtocol.swift; sourceTree = "<group>"; };
 		ACD579CA273EB7D9004A8D2B /* TimeInApplicationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInApplicationModel.swift; sourceTree = "<group>"; };
 		ACEC691926E5471300A0F25E /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACD07FB12884038C0089CB13 /* RickandMortyCommon in Frameworks */,
+				ACD07FB6288B0B2A0089CB13 /* RickandMortyUmbrella in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,9 +577,16 @@
 		ACD07FA92883F1560089CB13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ACD07FA82883F11B0089CB13 /* RickandMortyCommon */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ACD07FB3288B0B000089CB13 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				ACD07FB4288B0B000089CB13 /* Packages */,
+			);
+			name = Packages;
 			sourceTree = "<group>";
 		};
 		ACD579C9273EA09A004A8D2B /* Protocols */ = {
@@ -596,6 +603,7 @@
 		ACFCCF8E26E0F53A00D9A7DF = {
 			isa = PBXGroup;
 			children = (
+				ACD07FB3288B0B000089CB13 /* Packages */,
 				ACFCCF9926E0F53A00D9A7DF /* RickandMorty */,
 				ACFCCF9826E0F53A00D9A7DF /* Products */,
 				ACD07FA92883F1560089CB13 /* Frameworks */,
@@ -634,7 +642,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACFCCFAB26E0F53E00D9A7DF /* Build configuration list for PBXNativeTarget "RickandMorty" */;
 			buildPhases = (
-				ACDCA05526E0FA1F0081C64D /* ShellScript */,
+				ACDCA05526E0FA1F0081C64D /* SwiftLint */,
 				ACFCCF9326E0F53A00D9A7DF /* Sources */,
 				ACFCCF9426E0F53A00D9A7DF /* Frameworks */,
 				ACFCCF9526E0F53A00D9A7DF /* Resources */,
@@ -645,7 +653,7 @@
 			);
 			name = RickandMorty;
 			packageProductDependencies = (
-				ACD07FB02884038C0089CB13 /* RickandMortyCommon */,
+				ACD07FB5288B0B2A0089CB13 /* RickandMortyUmbrella */,
 			);
 			productName = RickandMorty;
 			productReference = ACFCCF9726E0F53A00D9A7DF /* RickandMorty.app */;
@@ -709,7 +717,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		ACDCA05526E0FA1F0081C64D /* ShellScript */ = {
+		ACDCA05526E0FA1F0081C64D /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -718,13 +726,15 @@
 			);
 			inputPaths = (
 			);
+			name = SwiftLint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nPATH=/opt/homebrew/bin:$PATH\nif [ -f com.raywenderlich.swiftlint.yml ]; then\n  if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n    ${PODS_ROOT}/SwiftLint/swiftlint --no-cache --config com.raywenderlich.swiftlint.yml\n  fi\nfi\n";
+			shellScript = "ROOT_DIR=\"${PROJECT_DIR}/infra/swiftlint\"\n\n${ROOT_DIR}/bin/swiftlint --config ${ROOT_DIR}/.swiftlint.yml --lenient\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -997,9 +1007,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		ACD07FB02884038C0089CB13 /* RickandMortyCommon */ = {
+		ACD07FB5288B0B2A0089CB13 /* RickandMortyUmbrella */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = RickandMortyCommon;
+			productName = RickandMortyUmbrella;
 		};
 /* End XCSwiftPackageProductDependency section */
 
