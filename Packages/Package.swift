@@ -3,13 +3,13 @@
 import PackageDescription
 
 let package = Package(
-  name: "RickandMortyCommon",
+  name: "RickandMortyUmbrella",
   platforms: [.iOS(.v15)],
 
   products: [
     .library(
-      name: "RickandMortyCommon",
-      targets: ["RickandMortyCommon"]
+      name: "RickandMortyUmbrella",
+      targets: ["RickandMortyUmbrella"]
     )
   ],
 
@@ -34,17 +34,19 @@ let package = Package(
 
   targets: [
     .target(
-      name: "RickandMortyCommon",
+      name: "RickandMortyUmbrella",
       dependencies: [
         .product(name: "Alamofire", package: "Alamofire"),
         .product(name: "GoogleMaps", package: "GoogleMaps-SP"),
         .product(name: "Kingfisher", package: "Kingfisher")
-      ]
+      ],
+      path: "Sources/Common"
     ),
 
       .testTarget(
-        name: "RickandMortyCommonTests",
-        dependencies: ["RickandMortyCommon"]
+        name: "RickandMortyUmbrellaTests",
+        dependencies: ["RickandMortyUmbrella"],
+        path: "Tests/CommonTests"
       ),
   ]
 )
