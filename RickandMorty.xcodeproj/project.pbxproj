@@ -733,7 +733,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${PROJECT_DIR}/infra/swiftlint/lint_all_changed.sh --lenient\n";
+			shellScript = "ROOT_DIR=\"${PROJECT_DIR}/infra/swiftlint\"\n\n${ROOT_DIR}/bin/swiftlint --config ${ROOT_DIR}/.swiftlint.yml --lenient\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

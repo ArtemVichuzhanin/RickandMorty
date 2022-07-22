@@ -39,10 +39,10 @@ let package = Package(
       path: "Sources/Common"
     ),
 
-      .testTarget(
+    .testTarget(
         name: "RickandMortyUmbrellaTests",
         dependencies: ["RickandMortyUmbrella"],
         path: "Tests/CommonTests"
-      ),
+    )
   ]
 )
