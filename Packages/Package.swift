@@ -25,10 +25,6 @@ let package = Package(
     .package(
       url: "https://github.com/onevcat/Kingfisher.git",
       "7.0.0"..."7.1.1"
-    ),
-    .package(
-      url: "https://github.com/realm/SwiftLint.git",
-      from: "0.43.0"
     )
   ],
 
